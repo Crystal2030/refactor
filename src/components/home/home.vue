@@ -1,8 +1,9 @@
 <template>
   <div class="main home">
+    <vheader></vheader>
     <!-- Swiper -->
     <div class="swiper-container">
-      <div class="parallax-bg" style="background-image:url('static/images/slide.jpeg')" data-swiper-parallax="-23%"></div>
+      <div class="parallax-bg" style="background-image:url('static/images/slider-bg.jpg'); background-size: 100%" data-swiper-parallax="-23%"></div>
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="title" data-swiper-parallax="-100">自动化运维	</div>
@@ -107,11 +108,14 @@
         <box></box>
       </div>
     </div>
+    <vfooter></vfooter>
   </div>
 </template>
 
 <script>
   /* eslint-disable no-new */
+  import vheader from '../header/header.vue';
+  import vfooter from '../footer/footer.vue';
   import $ from '../../../lib/jquery-1.11.3.min.js';
   import Swiper from '../../../lib/swiper.min.js';
   import box from '../box/box.vue';
@@ -191,8 +195,39 @@
         autoplay: 3000,
         loop: true
       });
-    },
+    this.animationHeader();
+  },
     methods: {
+      animationHeader() {
+        var docElem = document.documentElement;
+        var didScroll = false;
+        var changeHeaderOn = 300;
+
+        function init() {
+          window.addEventListener('scroll', function(event) {
+            if (!didScroll) {
+              didScroll = true;
+              setTimeout(scrollPage, 250);
+            }
+          }, false);
+        }
+
+        function scrollPage() {
+          var sy = scrollY();
+          if (sy >= changeHeaderOn) {
+            $('.navbar').addClass('navbar-shrink');
+          } else {
+            $('.navbar').removeClass('navbar-shrink');
+          }
+          didScroll = false;
+        }
+
+        function scrollY() {
+          return window.pageYOffset || docElem.scrollTop;
+        }
+
+        init();
+      },
       toggleShowAll() {
         this.showAll = !this.showAll;
         if (this.showAll) {
@@ -205,8 +240,10 @@
       }
     },
     components: {
+      vheader,
       box,
-      products
+      products,
+      vfooter
     }
   };
 </script>
