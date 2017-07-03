@@ -1,0 +1,399 @@
+<template>
+  <div class="main home">
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="parallax-bg" style="background-image:url('static/images/slide.jpeg')" data-swiper-parallax="-23%"></div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="title" data-swiper-parallax="-100">自动化运维	</div>
+          <div class="subtitle" data-swiper-parallax="-200">早起的虫儿有鸟吃</div>
+          <div class="text" data-swiper-parallax="-300">
+            <p>
+              自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="title" data-swiper-parallax="-100">专业团队</div>
+          <div class="subtitle" data-swiper-parallax="-200">团队成员很牛逼</div>
+          <div class="text" data-swiper-parallax="-300">
+            <p>
+              专业团队，一流人才，专业团队，一流人才，专业团队，一流人才，专业团队，一流人才，专业团队，一流人才
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="title" data-swiper-parallax="-100">超强产品线</div>
+          <div class="subtitle" data-swiper-parallax="-200">业界领先到企业级产品</div>
+          <div class="text" data-swiper-parallax="-300">
+            <p>
+              简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="title" data-swiper-parallax="-100">大数据</div>
+          <div class="subtitle" data-swiper-parallax="-200">大数据时代</div>
+          <div class="text" data-swiper-parallax="-300">
+            <p>
+              简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="title" data-swiper-parallax="-100">超强阵容培训</div>
+          <div class="subtitle" data-swiper-parallax="-200">培训中的战斗机</div>
+          <div class="text" data-swiper-parallax="-300">
+            <p>
+              简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
+      <!-- Add Arrow down -->
+      <!--<div class="arrow-down" @click.prevent="toProvider">
+        <img src="static/images/arrow_down.png" alt=""/>
+      </div>-->
+    </div>
+    <div class="box-container">
+      <div class="row">
+        <ul>
+          <li class="col-md-3">
+            <a href="#" target="_blank">
+              <i class="icon-partner"></i>
+              <h2>Oracle官方认证合作伙伴</h2>
+            </a>
+          </li>
+          <li class="col-md-3">
+            <a href="#" target="_blank">
+              <i class="icon-db"></i>
+              <h2>数据库运维经验丰富</h2>
+            </a>
+          </li>
+
+          <li class="col-md-3">
+            <a href="#" target="_blank">
+              <i class="icon-consult"></i>
+              <h2>业内专家顾问团</h2>
+            </a>
+          </li>
+
+          <li class="col-md-3">
+            <a href="#" target="_blank">
+              <i class="icon-training"></i>
+              <h2>专业深度培训</h2>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12" ref="provider">
+          <h2 class="content-title"><i class="line"></i> 数据库方案提供商 <i class="line"></i></h2>
+          <p class="col-md-12 col-sm-12 col-xs-12 text-center">
+            极数云舟拥有国内一系列专家，技术领域涉及MySQL、Redis、Hbase等数据库平台架构，为用户提供全套平台解决方案。主要产品包括：Estimate(MySQL 审核)、MAMP(DB管理平台)、Daas(数据即服务)
+          </p>
+        </div>
+      </div>
+      <products></products>
+      <div class="row">
+        <h2 class="content-title col-md-12 col-sm-12 col-xs-12"><i class="line"></i> 服务提供商 <i class="line"></i></h2>
+        <box></box>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  /* eslint-disable no-new */
+  import $ from '../../../lib/jquery-1.11.3.min.js';
+  import Swiper from '../../../lib/swiper.min.js';
+  import box from '../box/box.vue';
+  import products from '../products/products.vue';
+  const DEFAULTLEN = 8;
+  export default {
+    props: {
+
+    },
+    data() {
+      return {
+        scrollY: 0,
+        showAll: false,
+        defaultLen: DEFAULTLEN, // 默认显示几条产品
+        toggleText: '查看全部',
+        products: [
+          {
+            name: '自动化审核平台',
+            desc: '自动化审核平台'
+          },
+          {
+            name: 'MySQL实时异构同步平台',
+            desc: 'MySQL实时异构同步平台'
+          },
+          {
+            name: '自动化备份平台',
+            desc: '自动化备份平台'
+          },
+          {
+            name: '自动化归档平台',
+            desc: '自动化归档平台'
+          },
+          {
+            name: '智能监控平台',
+            desc: '智能监控平台'
+          },
+          {
+            name: '自动化运维管理平台',
+            desc: '自动化运维管理平台'
+          },
+          {
+            name: '中间件',
+            desc: '中间件'
+          },
+          {
+            name: 'Arkagent',
+            desc: '功能丰富的Agent'
+          },
+          {
+            name: '大数据服务',
+            desc: '大数据服务'
+          },
+          {
+            name: '极数学院培训',
+            desc: '极数学院培训'
+          },
+          {
+            name: '慢查询分析与自动化优化',
+            desc: '慢查询分析与自动化优化'
+          },
+          {
+            name: '自动化数据库巡检',
+            desc: '自动化数据库巡检'
+          }
+        ]
+      };
+    },
+    mounted() {
+      console.log($('.arrow-down'));
+      new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        parallax: true,
+        speed: 600,
+        autoplay: 3000,
+        loop: true
+      });
+    },
+    methods: {
+      toggleShowAll() {
+        this.showAll = !this.showAll;
+        if (this.showAll) {
+          this.toggleText = '查看全部';
+          this.defaultLen = DEFAULTLEN;
+        } else {
+          this.defaultLen = this.products.length;
+          this.toggleText = '收起';
+        }
+      }
+    },
+    components: {
+      box,
+      products
+    }
+  };
+</script>
+
+<style lang="scss" rel="stylesheet/scss">
+
+.content-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  line-height: 35px;
+  .line{
+    width: 10%;
+    border-top: 1px solid #bbbaba;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+.box-container{
+  width: 100%;
+  background: #e2e2e2;
+  ul {
+    margin-bottom: 0;
+    height: 100px;
+    text-align: center;
+    li{
+      height: 100px;
+      overflow: hidden;
+      a{
+        height: 100px;
+        line-height: 70px;
+        text-decoration: none;
+        h2{
+          margin-top: 10px;
+          font-size: 14px;
+          color: #333;
+          font-weight: normal;
+        }
+        img{
+          width: 50px;
+        }
+        [class^="icon-"]{
+          padding-top: 10px;
+          display: block;
+          color: #333;
+          font-size: 45px;
+          &:hover{
+            font-size: 55px;
+            transition: font-size .3s ease-in-out;
+           }
+        }
+      }
+      &:hover{
+        background: #eee;
+      }
+    }
+  }
+}
+
+
+.swiper-container {
+  width: 100%;
+  height: 70vh;
+  background: #000;
+  .swiper-slide {
+    font-size: 18px;
+    color:#fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 100px;
+  }
+  .parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+  .swiper-slide .title {
+    font-size: 41px;
+    font-weight: 300;
+  }
+  .swiper-slide .subtitle {
+    font-size: 21px;
+  }
+  .swiper-slide .text {
+    font-size: 14px;
+    max-width: 400px;
+    line-height: 1.3;
+  }
+  .swiper-pagination{
+    bottom: 10px;
+  }
+@keyframes xguide_down{
+  0%,100%{
+    -o-transform:scale(0.8);
+    -moz-transform:scale(0.8);
+    -webkit-transform:scale(0.8);
+    -ms-transform:scale(0.8);
+    transform:scale(0.8);
+    opacity:0.5
+  }
+  50%{
+    transform:scale(1.0);
+    -moz-transform:scale(1.0);
+    -o-transform:scale(1.0);
+    -webkit-transform:scale(1.0);
+    -ms-transform:scale(1.0);
+    opacity:1
+  }
+
+}
+@-webkit-keyframes xguide_down{
+  0%,100%{
+    -o-transform:scale(0.8);
+    -moz-transform:scale(0.8);
+    -webkit-transform:scale(0.8);
+    -ms-transform:scale(0.8);
+    transform:scale(0.8);
+    opacity:0.5
+  }
+  50%{
+    -webkit-transform:scale(1.0);
+    -moz-transform:scale(1.0);
+    -o-transform:scale(1.0);
+    -ms-transform:scale(1.0);
+    transform:scale(1.0);
+    opacity:1
+  }
+
+}
+@-moz-keyframes xguide_down{
+  0%,100%{
+    -o-transform:scale(0.8);
+    -moz-transform:scale(0.8);
+    -webkit-transform:scale(0.8);
+    -ms-transform:scale(0.8);
+    transform:scale(0.8);
+    opacity:0.5
+  }
+  50%{
+    -moz-transform:scale(1.0);
+    -o-transform:scale(1.0);
+    -webkit-transform:scale(1.0);
+    -ms-transform:scale(1.0);
+    transform:scale(1.0);
+    opacity:1
+  }
+
+}
+@-o-keyframes xguide_down{
+  0%,100%{
+    -o-transform:scale(0.8);
+    -moz-transform:scale(0.8);
+    -webkit-transform:scale(0.8);
+    -ms-transform:scale(0.8);
+    transform:scale(0.8);
+    opacity:0.5
+  }
+  50%{
+    -o-transform:scale(1.0);
+    -moz-transform:scale(1.0);
+    -webkit-transform:scale(1.0);
+    -ms-transform:scale(1.0);
+    transform:scale(1.0);
+    opacity:1
+  }
+
+}
+  .arrow-down{
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    img{
+      width: 30px;
+      animation: 'xguide_down' 2s ease-in-out 2s infinite;
+    }
+  }
+}
+
+
+
+</style>
