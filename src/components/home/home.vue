@@ -7,46 +7,46 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="title" data-swiper-parallax="-100">自动化运维	</div>
-          <div class="subtitle" data-swiper-parallax="-200">早起的虫儿有鸟吃</div>
+          <!--<div class="subtitle" data-swiper-parallax="-200">早起的虫儿有鸟吃</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
-              自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容
+              <!--自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容-->
             </p>
           </div>
         </div>
         <div class="swiper-slide">
           <div class="title" data-swiper-parallax="-100">专业团队</div>
-          <div class="subtitle" data-swiper-parallax="-200">团队成员很牛逼</div>
+          <!--<div class="subtitle" data-swiper-parallax="-200">团队成员很牛逼</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
-              专业团队，一流人才，专业团队，一流人才，专业团队，一流人才，专业团队，一流人才，专业团队，一流人才
+              <!--专业团队，一流人才，专业团队，一流人才，专业团队，一流人才，专业团队，一流人才，专业团队，一流人才-->
             </p>
           </div>
         </div>
         <div class="swiper-slide">
           <div class="title" data-swiper-parallax="-100">超强产品线</div>
-          <div class="subtitle" data-swiper-parallax="-200">业界领先到企业级产品</div>
+          <!--<div class="subtitle" data-swiper-parallax="-200">业界领先到企业级产品</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
-              简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。
+              <!--简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。-->
             </p>
           </div>
         </div>
         <div class="swiper-slide">
           <div class="title" data-swiper-parallax="-100">大数据</div>
-          <div class="subtitle" data-swiper-parallax="-200">大数据时代</div>
+          <!--<div class="subtitle" data-swiper-parallax="-200">大数据时代</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
-              简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。
+              <!--简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。-->
             </p>
           </div>
         </div>
         <div class="swiper-slide">
           <div class="title" data-swiper-parallax="-100">超强阵容培训</div>
-          <div class="subtitle" data-swiper-parallax="-200">培训中的战斗机</div>
+          <!--<div class="subtitle" data-swiper-parallax="-200">培训中的战斗机</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
-              简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。
+              <!--简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。-->
             </p>
           </div>
         </div>
@@ -93,21 +93,14 @@
         </ul>
       </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12" ref="provider">
-          <h2 class="content-title"><i class="line"></i> 数据库方案提供商 <i class="line"></i></h2>
-          <p class="col-md-12 col-sm-12 col-xs-12 text-center">
-            极数云舟拥有国内一系列专家，技术领域涉及MySQL、Redis、Hbase等数据库平台架构，为用户提供全套平台解决方案。主要产品包括：Estimate(MySQL 审核)、MAMP(DB管理平台)、Daas(数据即服务)
-          </p>
-        </div>
-      </div>
-      <products></products>
-      <div class="row">
-        <h2 class="content-title col-md-12 col-sm-12 col-xs-12"><i class="line"></i> 服务提供商 <i class="line"></i></h2>
-        <box></box>
-      </div>
-    </div>
+    <!--product-->
+    <products></products>
+    <!--service-->
+    <service></service>
+    <!--training-->
+    <training></training>
+    <!--about-->
+    <about></about>
     <vfooter></vfooter>
   </div>
 </template>
@@ -120,6 +113,9 @@
   import Swiper from '../../../lib/swiper.min.js';
   import box from '../box/box.vue';
   import products from '../products/products.vue';
+  import service from '../service/service.vue';
+  import training from '../training/training.vue';
+  import about from '../about/about.vue';
   const DEFAULTLEN = 8;
   export default {
     props: {
@@ -127,6 +123,7 @@
     },
     data() {
       return {
+        logo: 'static/images/logo-white.png',
         scrollY: 0,
         showAll: false,
         defaultLen: DEFAULTLEN, // 默认显示几条产品
@@ -216,8 +213,10 @@
           var sy = scrollY();
           if (sy >= changeHeaderOn) {
             $('.navbar').addClass('navbar-shrink');
+            $('.navbar-brand img').attr('src', 'static/images/logo-blue.png');
           } else {
             $('.navbar').removeClass('navbar-shrink');
+            $('.navbar-brand img').attr('src', 'static/images/logo-white.png');
           }
           didScroll = false;
         }
@@ -243,6 +242,9 @@
       vheader,
       box,
       products,
+      service,
+      training,
+      about,
       vfooter
     }
   };
@@ -250,19 +252,25 @@
 
 <style lang="scss" rel="stylesheet/scss">
 
-.content-title{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 35px;
-  line-height: 35px;
-  .line{
-    width: 10%;
-    border-top: 1px solid #bbbaba;
-    margin-left: 20px;
-    margin-right: 20px;
+.section-title{
+  margin-top: 70px;
+  margin-bottom: 40px;
+  color: #232323;
+  [class^="content-title-"]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    line-height: 35px;
+    font-size: 32px;
+    font-weight: normal;
+    margin:0;
+    &.content-title-en{
+     font-size: 24px;
+    }
   }
 }
+
 .box-container{
   width: 100%;
   background: #e2e2e2;
@@ -307,14 +315,15 @@
 
 .swiper-container {
   width: 100%;
-  height: 70vh;
+  height: 85vh;
   background: #000;
   .swiper-slide {
     font-size: 18px;
     color:#fff;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 40px 100px;
+    text-align: center;
+    padding-top: 15%;
   }
   .parallax-bg {
     position: absolute;

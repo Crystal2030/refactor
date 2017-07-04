@@ -1,6 +1,10 @@
 <template>
   <div class="main service">
     <div class="index-content graybg">
+      <div class="row">
+        <h2 class="content-title col-md-12 col-sm-12 col-xs-12"><i class="line"></i> 服务提供商 <i class="line"></i></h2>
+        <box></box>
+      </div>
       <ul class="trait-list clearfix animationLCR show col-md-12">
         <li class="slideleft col-md-4">
           <i class="icon-safe"></i>

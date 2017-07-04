@@ -1,8 +1,19 @@
 <template>
   <div class="main products-com">
     <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12" ref="provider">
+          <div class="section-title">
+            <h3 class="content-title-en">PRODUCTS</h3>
+            <h2 class="content-title-ch">产品</h2>
+          </div>
+          <p class="col-md-12 col-sm-12 col-xs-12 text-center">
+            极数云舟拥有国内一系列专家，技术领域涉及MySQL、Redis、Hbase等数据库平台架构，为用户提供全套平台解决方案。主要产品包括：Estimate(MySQL 审核)、MAMP(DB管理平台)、Daas(数据即服务)
+          </p>
+        </div>
+      </div>
       <div class="row products" v-cloak>
-        <div class="col-md-3 text-center product" v-for="(product, index) in products" v-show="index < defaultLen">
+        <div class="col-md-4 text-center product" v-for="(product, index) in products" v-show="index < defaultLen">
           <i class="icon-training1"></i>
           <div class="product-name">{{product.name}}</div>
         </div>
@@ -17,7 +28,7 @@
 <script>
   /* eslint-disable no-new */
 //  import $ from '../../../lib/jquery-1.11.3.min.js';
-  const DEFAULTLEN = 8;
+  const DEFAULTLEN = 6;
   export default {
     data() {
     return {
@@ -98,7 +109,7 @@
   .products{
     margin-top: 40px;
   .product{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   [class^="icon-"]{
     display: block;
     font-size: 50px;
@@ -119,10 +130,10 @@
     color: #373d41;
     border: 1px solid #373d41;
     cursor: pointer;
-  &:hover{
-     color: #2aacdd;
-     border-color: #2aacdd;
-   }
+    &:hover{
+       color: #2aacdd;
+       border-color: #2aacdd;
+    }
   }
   }
 
