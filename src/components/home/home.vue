@@ -1,9 +1,9 @@
 <template>
-  <div class="main home">
-    <vheader></vheader>
+  <div class="home">
+    <vheader id="menu"></vheader>
     <!-- Swiper -->
     <div class="swiper-container">
-      <div class="parallax-bg" style="background-image:url('static/images/slider-bg.jpg'); background-size: 100%" data-swiper-parallax="-23%"></div>
+      <div class="parallax-bg" style="background-image:url('static/images/slider-bg.jpg'); background-size: cover;" data-swiper-parallax="-23%"></div>
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="title" data-swiper-parallax="-100">自动化运维	</div>
@@ -94,13 +94,13 @@
       </div>
     </div>
     <!--product-->
-    <products></products>
+    <products id="products"></products>
     <!--service-->
-    <service></service>
+    <service  id="service"></service>
     <!--training-->
-    <training></training>
+    <training id="training"></training>
     <!--about-->
-    <about></about>
+    <about id="about"></about>
     <vfooter></vfooter>
   </div>
 </template>
@@ -111,7 +111,6 @@
   import vfooter from '../footer/footer.vue';
   import $ from '../../../lib/jquery-1.11.3.min.js';
   import Swiper from '../../../lib/swiper.min.js';
-  import box from '../box/box.vue';
   import products from '../products/products.vue';
   import service from '../service/service.vue';
   import training from '../training/training.vue';
@@ -124,7 +123,6 @@
     data() {
       return {
         logo: 'static/images/logo-white.png',
-        scrollY: 0,
         showAll: false,
         defaultLen: DEFAULTLEN, // 默认显示几条产品
         toggleText: '查看全部',
@@ -177,11 +175,17 @@
             name: '自动化数据库巡检',
             desc: '自动化数据库巡检'
           }
-        ]
+        ],
+        scrollY: 0,
+        mainHeight: []
       };
     },
+    computed: {
+       currentIndex() {
+
+       }
+    },
     mounted() {
-      console.log($('.arrow-down'));
       new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         paginationClickable: true,
@@ -192,8 +196,8 @@
         autoplay: 3000,
         loop: true
       });
-    this.animationHeader();
-  },
+      this.animationHeader();
+    },
     methods: {
       animationHeader() {
         var docElem = document.documentElement;
@@ -240,7 +244,6 @@
     },
     components: {
       vheader,
-      box,
       products,
       service,
       training,
@@ -323,7 +326,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     text-align: center;
-    padding-top: 15%;
+    padding-top: 40vh;
   }
   .parallax-bg {
     position: absolute;

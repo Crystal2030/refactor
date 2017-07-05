@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3 col-xs-3">
           <h3>服务</h3>
           <ul>
             <li><a href="#/service">数据库服务</a></li>
@@ -12,7 +12,7 @@
             <li><a href="#/service">云服务</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3 col-xs-3">
           <h3>产品</h3>
           <ul>
             <li><a href="#/product">Estimate</a></li>
@@ -21,7 +21,7 @@
             <li><a href="#/product">Proxy</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3 col-xs-3">
           <h3>培训</h3>
           <ul>
             <li><a href="#/training">数据库公共培训</a></li>
@@ -29,7 +29,7 @@
             <li><a href="#/training">产品培训</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3 col-xs-3">
           <h3>关于我们</h3>
           <ul>
             <li><a href="#/about">公司简介</a></li>

@@ -15,24 +15,24 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" >
             <li class="hidden">
               <a href="/#page-top"></a>
             </li>
             <li>
-              <a class="page-scroll">首页</a>
+              <a class="page-scroll" href="/#home">首页</a>
             </li>
             <li>
-              <a class="page-scroll">产品</a>
+              <a class="page-scroll" href="/#products">产品</a>
             </li>
             <li>
-              <a class="page-scroll">服务</a>
+              <a class="page-scroll" href="/#service">服务</a>
             </li>
             <li>
-              <a class="page-scroll">培训</a>
+              <a class="page-scroll" href="/#training">培训</a>
             </li>
             <li>
-              <a class="page-scroll">关于我们</a>
+              <a class="page-scroll" href="/#about">关于我们</a>
             </li>
           </ul>
         </div>
