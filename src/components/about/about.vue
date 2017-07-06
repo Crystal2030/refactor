@@ -3,8 +3,8 @@
     <div class="container">
       <div class="row">
         <div class="section-title">
-          <h3 class="content-title-en">SERVICE</h3>
-          <h2 class="content-title-ch">服务</h2>
+          <h3 class="content-title-en">ABOUT</h3>
+          <h2 class="content-title-ch">关于我们</h2>
         </div>
       </div>
       <div class="row">
@@ -45,7 +45,7 @@
           </div>
           <div class="row">
             <div class="col-md-12 text-center">
-              <button type="submit" class="btn">发送</button>
+              <button type="submit" class="btn send">发送</button>
             </div>
           </div>
         </div>
@@ -59,7 +59,16 @@
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-
+.about{
+  background: #fcfcfc;
+  padding-bottom: 60px;
+  .send{
+    background: #1dabdf;
+    width:135px;
+    height: 35px;
+    color: #fff;
+  }
+}
 
 
 </style>

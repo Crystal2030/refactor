@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <vheader id="menu"></vheader>
+    <vheader id="home"></vheader>
     <!-- Swiper -->
     <div class="swiper-container">
       <div class="parallax-bg" style="background-image:url('static/images/slider-bg.jpg'); background-size: cover;" data-swiper-parallax="-23%"></div>
@@ -66,27 +66,27 @@
         <ul>
           <li class="col-md-3">
             <a href="#" target="_blank">
-              <i class="icon-partner"></i>
+              <i class="iconfont icon-hezuohuoban"></i>
               <h2>Oracle官方认证合作伙伴</h2>
             </a>
           </li>
           <li class="col-md-3">
             <a href="#" target="_blank">
-              <i class="icon-db"></i>
+              <i class="iconfont icon-shujuku"></i>
               <h2>数据库运维经验丰富</h2>
             </a>
           </li>
 
           <li class="col-md-3">
             <a href="#" target="_blank">
-              <i class="icon-consult"></i>
+              <i class="iconfont icon-guanyuguwen"></i>
               <h2>业内专家顾问团</h2>
             </a>
           </li>
 
           <li class="col-md-3">
             <a href="#" target="_blank">
-              <i class="icon-training"></i>
+              <i class="iconfont icon-training"></i>
               <h2>专业深度培训</h2>
             </a>
           </li>
@@ -107,10 +107,10 @@
 
 <script>
   /* eslint-disable no-new */
-  import vheader from '../header/header.vue';
-  import vfooter from '../footer/footer.vue';
   import $ from '../../../lib/jquery-1.11.3.min.js';
   import Swiper from '../../../lib/swiper.min.js';
+  import vheader from '../header/header.vue';
+  import vfooter from '../footer/footer.vue';
   import products from '../products/products.vue';
   import service from '../service/service.vue';
   import training from '../training/training.vue';
@@ -285,11 +285,12 @@
       height: 100px;
       overflow: hidden;
       a{
+        display: block;
         height: 100px;
-        line-height: 70px;
+        line-height: 65px;
         text-decoration: none;
         h2{
-          margin-top: 10px;
+          margin-top: 0;
           font-size: 14px;
           color: #333;
           font-weight: normal;
@@ -297,13 +298,13 @@
         img{
           width: 50px;
         }
-        [class^="icon-"]{
+        .iconfont{
           padding-top: 10px;
           display: block;
-          color: #333;
+          color: #3e3e3e;
           font-size: 45px;
           &:hover{
-            font-size: 55px;
+            font-size: 50px;
             transition: font-size .3s ease-in-out;
            }
         }

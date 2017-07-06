@@ -143,6 +143,10 @@
             opacity: 1;
             -webkit-transform: translate3d(0,-50px,0);
             transform: translate3d(0,-50px,0);
+            font-size: 18px;
+          }
+          .train-info>li{
+            font-size: 12px;
           }
         }
       }

@@ -34,8 +34,9 @@ body {
 }
 body>div{
   display: flex!important;
-  flex-flow: column!important;;
-  min-height: 100vh!important;;
+  flex-flow: column!important;
+  min-height: 100vh!important;
+  overflow: hidden;
 }
 
 blockquote, q {

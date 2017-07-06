@@ -20,19 +20,19 @@
               <a href="/#page-top"></a>
             </li>
             <li>
-              <a class="page-scroll" href="/#home">首页</a>
+              <a class="page-scroll">首页</a>
             </li>
             <li>
-              <a class="page-scroll" href="/#products">产品</a>
+              <a class="page-scroll" >产品</a>
             </li>
             <li>
-              <a class="page-scroll" href="/#service">服务</a>
+              <a class="page-scroll" >服务</a>
             </li>
             <li>
-              <a class="page-scroll" href="/#training">培训</a>
+              <a class="page-scroll" >培训</a>
             </li>
             <li>
-              <a class="page-scroll" href="/#about">关于我们</a>
+              <a class="page-scroll" >关于我们</a>
             </li>
           </ul>
         </div>
@@ -44,7 +44,19 @@
 
 <script>
   export default {
-
+    methods: {
+      jump (index) {
+        let jump = document.querySelectorAll('.page-scroll');
+        // 获取需要滚动的距离
+        let total = jump[index].offsetTop;
+        // Chrome
+        document.body.scrollTop = total;
+        // Firefox
+        document.documentElement.scrollTop = total;
+        // Safari
+        window.pageYOffset = total;
+      }
+    }
   };
 </script>
 
