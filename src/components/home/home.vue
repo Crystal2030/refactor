@@ -1,12 +1,53 @@
 <template>
   <div class="home">
-    <vheader id="home"></vheader>
+    <nav class="navbar navbar-default navbar-fixed-top" id="page-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll" href="/#page-top"><img
+            src="static/images/logo-white.png" alt="ark logo"></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+              <a href="/#page-top"></a>
+            </li>
+            <li>
+              <a id="demo1Btn" href="#home" class="demoBtn">首页</a>
+            </li>
+            <li>
+              <a id="demo2Btn" href="#products" class="demoBtn">产品</a>
+            </li>
+            <li>
+              <a id="demo3Btn" href="#service" class="demoBtn">服务</a>
+            </li>
+            <li>
+              <a id="demo4Btn" href="#training" class="demoBtn">培训</a>
+            </li>
+            <li>
+              <a id="demo5Btn" href="#about" class="demoBtn">关于我们</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
     <!-- Swiper -->
-    <div class="swiper-container">
-      <div class="parallax-bg" style="background-image:url('static/images/slider-bg.jpg'); background-size: cover;" data-swiper-parallax="-23%"></div>
+    <div id="home" class="swiper-container">
+      <div class="parallax-bg" style="background-image:url('static/images/slider-bg.jpg'); background-size: cover;"
+           data-swiper-parallax="-23%"></div>
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="title" data-swiper-parallax="-100">自动化运维	</div>
+          <div class="title" data-swiper-parallax="-100">自动化运维</div>
           <!--<div class="subtitle" data-swiper-parallax="-200">早起的虫儿有鸟吃</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
@@ -96,7 +137,7 @@
     <!--product-->
     <products id="products"></products>
     <!--service-->
-    <service  id="service"></service>
+    <service id="service"></service>
     <!--training-->
     <training id="training"></training>
     <!--about-->
@@ -109,7 +150,7 @@
   /* eslint-disable no-new */
   import $ from '../../../lib/jquery-1.11.3.min.js';
   import Swiper from '../../../lib/swiper.min.js';
-  import vheader from '../header/header.vue';
+//  require('../../../lib/scroll.min.js');
   import vfooter from '../footer/footer.vue';
   import products from '../products/products.vue';
   import service from '../service/service.vue';
@@ -117,9 +158,7 @@
   import about from '../about/about.vue';
   const DEFAULTLEN = 8;
   export default {
-    props: {
-
-    },
+    props: {},
     data() {
       return {
         logo: 'static/images/logo-white.png',
@@ -181,9 +220,9 @@
       };
     },
     computed: {
-       currentIndex() {
+      currentIndex() {
 
-       }
+      }
     },
     mounted() {
       new Swiper('.swiper-container', {
@@ -205,7 +244,7 @@
         var changeHeaderOn = 300;
 
         function init() {
-          window.addEventListener('scroll', function(event) {
+          window.addEventListener('scroll', function (event) {
             if (!didScroll) {
               didScroll = true;
               setTimeout(scrollPage, 250);
@@ -243,7 +282,6 @@
       }
     },
     components: {
-      vheader,
       products,
       service,
       training,
@@ -254,196 +292,277 @@
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-
-.section-title{
-  margin-top: 70px;
-  margin-bottom: 40px;
-  color: #232323;
-  [class^="content-title-"]{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 35px;
-    line-height: 35px;
-    font-size: 32px;
-    font-weight: normal;
-    margin:0;
-    &.content-title-en{
-     font-size: 24px;
+  .navbar-default {
+    background-color: #222;
+    border-color: transparent;
+    .navbar-collapse {
+      border-color: rgba(255,255,255,.02)
+    }
+    .navbar-toggle{
+      .icon-bar{
+        background: #fff;
+      }
+      &:hover,&:focus{
+        background: #007aff;
+      }
+    }
+    .navbar-brand {
+      padding: 0px;
+    }
+    .nav{
+      li{
+        a{
+          font-family: "Roboto",sans-serif;
+          text-transform: uppercase;
+          font-weight: bold;
+          letter-spacing: 1px;
+          position: relative;
+          transition: color .2s ease-in-out;
+          color:#fff;
+          cursor: pointer;
+          &:before{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            border-bottom: 2px solid;
+            transition: width .2s ease-in-out;
+          }
+          &:hover,&:focus{
+            outline: 0;
+            color: #2aacdd;
+            transition: color .2s ease-in-out;
+          }
+          &:hover:before{
+            width: 100%;
+          }
+        }
+      }
     }
   }
-}
+  @media (min-width:768px) {
+    .navbar-default
+    {
+      background-color: transparent;
+      padding: 25px 0;
+      -webkit-transition:padding .3s;
+      -moz-transition:padding .3s;
+      transition:padding .3s;
+      border:0;
+      .navbar-nav{
+        .active{
+          a{
+            border-radius: 3px
 
-.box-container{
-  width: 100%;
-  background: #e2e2e2;
-  ul {
-    margin-bottom: 0;
-    height: 100px;
-    text-align: center;
-    li{
+          }
+        }
+      }
+      .navbar-brand {
+        font-size: 2em;
+        -webkit-transition:all .3s;
+        -moz-transition:all .3s;
+        transition:all .3s
+      }
+      &.navbar-shrink {
+        background-color: #fff;
+        box-shadow: 0 4px 4px 0 rgba(0,0,0,.1);
+        padding: 10px 0;
+        .navbar-nav{
+          a{
+            color: #222;
+          }
+        }
+      }
+    }
+  }
+  .section-title {
+    margin-top: 70px;
+    margin-bottom: 40px;
+    color: #232323;
+    [class^="content-title-"] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 35px;
+      line-height: 35px;
+      font-size: 32px;
+      font-weight: normal;
+      margin: 0;
+      &.content-title-en {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .box-container {
+    width: 100%;
+    background: #e2e2e2;
+    ul {
+      margin-bottom: 0;
       height: 100px;
-      overflow: hidden;
-      a{
-        display: block;
+      text-align: center;
+      li {
         height: 100px;
-        line-height: 65px;
-        text-decoration: none;
-        h2{
-          margin-top: 0;
-          font-size: 14px;
-          color: #333;
-          font-weight: normal;
-        }
-        img{
-          width: 50px;
-        }
-        .iconfont{
-          padding-top: 10px;
+        overflow: hidden;
+        a {
           display: block;
-          color: #3e3e3e;
-          font-size: 45px;
-          &:hover{
-            font-size: 50px;
-            transition: font-size .3s ease-in-out;
-           }
+          height: 100px;
+          line-height: 65px;
+          text-decoration: none;
+          h2 {
+            margin-top: 0;
+            font-size: 14px;
+            color: #333;
+            font-weight: normal;
+          }
+          img {
+            width: 50px;
+          }
+          .iconfont {
+            padding-top: 10px;
+            display: block;
+            color: #3e3e3e;
+            font-size: 45px;
+            &:hover {
+              font-size: 50px;
+              transition: font-size .3s ease-in-out;
+            }
+          }
+        }
+        &:hover {
+          background: #eee;
         }
       }
-      &:hover{
-        background: #eee;
+    }
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 85vh;
+    background: #000;
+    .swiper-slide {
+      font-size: 18px;
+      color: #fff;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      text-align: center;
+      padding-top: 40vh;
+    }
+    .parallax-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 130%;
+      height: 100%;
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-position: center;
+    }
+    .swiper-slide .title {
+      font-size: 41px;
+      font-weight: 300;
+    }
+    .swiper-slide .subtitle {
+      font-size: 21px;
+    }
+    .swiper-slide .text {
+      font-size: 14px;
+      max-width: 400px;
+      line-height: 1.3;
+    }
+    .swiper-pagination {
+      bottom: 10px;
+    }
+    @keyframes xguide_down {
+      0%, 100% {
+        -o-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.5
+      }
+      50% {
+        transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        opacity: 1
+      }
+
+    }
+    @-webkit-keyframes xguide_down {
+      0%, 100% {
+        -o-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.5
+      }
+      50% {
+        -webkit-transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 1
+      }
+
+    }
+    @-moz-keyframes xguide_down {
+      0%, 100% {
+        -o-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.5
+      }
+      50% {
+        -moz-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 1
+      }
+
+    }
+    @-o-keyframes xguide_down {
+      0%, 100% {
+        -o-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.5
+      }
+      50% {
+        -o-transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 1
+      }
+
+    }
+    .arrow-down {
+      position: absolute;
+      left: 50%;
+      bottom: 40px;
+      margin-left: -25px;
+      width: 50px;
+      height: 50px;
+      img {
+        width: 30px;
+        animation: 'xguide_down' 2s ease-in-out 2s infinite;
       }
     }
   }
-}
-
-
-.swiper-container {
-  width: 100%;
-  height: 85vh;
-  background: #000;
-  .swiper-slide {
-    font-size: 18px;
-    color:#fff;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    text-align: center;
-    padding-top: 40vh;
-  }
-  .parallax-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 130%;
-    height: 100%;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center;
-  }
-  .swiper-slide .title {
-    font-size: 41px;
-    font-weight: 300;
-  }
-  .swiper-slide .subtitle {
-    font-size: 21px;
-  }
-  .swiper-slide .text {
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
-  }
-  .swiper-pagination{
-    bottom: 10px;
-  }
-@keyframes xguide_down{
-  0%,100%{
-    -o-transform:scale(0.8);
-    -moz-transform:scale(0.8);
-    -webkit-transform:scale(0.8);
-    -ms-transform:scale(0.8);
-    transform:scale(0.8);
-    opacity:0.5
-  }
-  50%{
-    transform:scale(1.0);
-    -moz-transform:scale(1.0);
-    -o-transform:scale(1.0);
-    -webkit-transform:scale(1.0);
-    -ms-transform:scale(1.0);
-    opacity:1
-  }
-
-}
-@-webkit-keyframes xguide_down{
-  0%,100%{
-    -o-transform:scale(0.8);
-    -moz-transform:scale(0.8);
-    -webkit-transform:scale(0.8);
-    -ms-transform:scale(0.8);
-    transform:scale(0.8);
-    opacity:0.5
-  }
-  50%{
-    -webkit-transform:scale(1.0);
-    -moz-transform:scale(1.0);
-    -o-transform:scale(1.0);
-    -ms-transform:scale(1.0);
-    transform:scale(1.0);
-    opacity:1
-  }
-
-}
-@-moz-keyframes xguide_down{
-  0%,100%{
-    -o-transform:scale(0.8);
-    -moz-transform:scale(0.8);
-    -webkit-transform:scale(0.8);
-    -ms-transform:scale(0.8);
-    transform:scale(0.8);
-    opacity:0.5
-  }
-  50%{
-    -moz-transform:scale(1.0);
-    -o-transform:scale(1.0);
-    -webkit-transform:scale(1.0);
-    -ms-transform:scale(1.0);
-    transform:scale(1.0);
-    opacity:1
-  }
-
-}
-@-o-keyframes xguide_down{
-  0%,100%{
-    -o-transform:scale(0.8);
-    -moz-transform:scale(0.8);
-    -webkit-transform:scale(0.8);
-    -ms-transform:scale(0.8);
-    transform:scale(0.8);
-    opacity:0.5
-  }
-  50%{
-    -o-transform:scale(1.0);
-    -moz-transform:scale(1.0);
-    -webkit-transform:scale(1.0);
-    -ms-transform:scale(1.0);
-    transform:scale(1.0);
-    opacity:1
-  }
-
-}
-  .arrow-down{
-    position: absolute;
-    left: 50%;
-    bottom: 40px;
-    margin-left: -25px;
-    width: 50px;
-    height: 50px;
-    img{
-      width: 30px;
-      animation: 'xguide_down' 2s ease-in-out 2s infinite;
-    }
-  }
-}
-
 
 
 </style>
