@@ -21,19 +21,19 @@
               <a href="/#page-top"></a>
             </li>
             <li>
-              <a v-scroll-to="'#home'">首页</a>
+              <router-link v-scroll-to="{el: '#home'}" to="home">首页</router-link>
             </li>
             <li>
-              <a v-scroll-to="'#products'">产品</a>
+              <router-link v-scroll-to="{el: '#products'}" to="home">产品</router-link>
             </li>
             <li>
-              <a v-scroll-to="'#service'">服务</a>
+              <router-link v-scroll-to="{el: '#service'}" to="home">服务</router-link>
             </li>
             <li>
-              <a v-scroll-to="'#training'">培训</a>
+              <router-link v-scroll-to="{el: '#training'}" to="home">培训</router-link>
             </li>
             <li>
-              <a v-scroll-to="'#about'">关于我们</a>
+              <router-link v-scroll-to="{el: '#about'}" to="home">关于我们</router-link>
             </li>
           </ul>
         </div>
@@ -149,8 +149,6 @@
 <script>
   /* eslint-disable no-new */
   import Vue from 'vue';
-  console.log(Vue);
-
   import VueScrollTo from 'vue-scrollto';
   import $ from '../../../lib/jquery-1.11.3.min.js';
   import Swiper from '../../../lib/swiper.min.js';
@@ -222,11 +220,6 @@
         scrollY: 0,
         mainHeight: []
       };
-    },
-    computed: {
-      currentIndex() {
-
-      }
     },
     mounted() {
       new Swiper('.swiper-container', {
@@ -324,6 +317,9 @@
           transition: color .2s ease-in-out;
           color:#fff;
           cursor: pointer;
+          &:active{
+            color: red;
+          }
           &:before{
             content: '';
             position: absolute;
