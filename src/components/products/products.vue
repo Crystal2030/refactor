@@ -15,7 +15,7 @@
       </div>
       <div class="row products" v-cloak>
         <div class="col-md-4 text-center product" v-for="(product, index) in products" v-show="index < defaultLen">
-          <i class="iconfont icon-training"></i>
+          <i class="iconfont" :class="`icon-${product.icon}`"></i>
           <div class="product-name">{{product.name}}</div>
         </div>
         <div class="col-md-12">
@@ -40,51 +40,63 @@
         products: [
           {
             name: '自动化审核平台',
-            desc: '自动化审核平台'
+            desc: '自动化审核平台',
+            icon: 'shenhe'
           },
           {
             name: 'MySQL实时异构同步平台',
-            desc: 'MySQL实时异构同步平台'
+            desc: 'MySQL实时异构同步平台',
+            icon: 'shenhe'
           },
           {
             name: '自动化备份平台',
-            desc: '自动化备份平台'
+            desc: '自动化备份平台',
+            icon: 'shenhe'
           },
           {
             name: '自动化归档平台',
-            desc: '自动化归档平台'
+            desc: '自动化归档平台',
+            icon: 'shenhe'
           },
           {
             name: '智能监控平台',
-            desc: '智能监控平台'
+            desc: '智能监控平台',
+            icon: 'shenhe'
           },
           {
             name: '自动化运维管理平台',
-            desc: '自动化运维管理平台'
+            desc: '自动化运维管理平台',
+            icon: 'shenhe'
           },
           {
             name: '中间件',
-            desc: '中间件'
+            desc: '中间件',
+            icon: 'shenhe'
           },
           {
             name: 'Arkagent',
-            desc: '功能丰富的Agent'
+            desc: '功能丰富的Agent',
+            icon: 'shenhe'
           },
           {
             name: '大数据服务',
-            desc: '大数据服务'
+            desc: '大数据服务',
+            icon: 'shenhe'
           },
           {
             name: '极数学院培训',
-            desc: '极数学院培训'
+            desc: '极数学院培训',
+            icon: 'shenhe'
           },
           {
             name: '慢查询分析与自动化优化',
-            desc: '慢查询分析与自动化优化'
+            desc: '慢查询分析与自动化优化',
+            icon: 'shenhe'
           },
           {
             name: '自动化数据库巡检',
-            desc: '自动化数据库巡检'
+            desc: '自动化数据库巡检',
+            icon: 'shenhe'
           }
         ]
       };

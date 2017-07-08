@@ -21,19 +21,19 @@
               <a href="/#page-top"></a>
             </li>
             <li>
-              <a id="demo1Btn" href="#home" class="demoBtn">首页</a>
+              <a v-scroll-to="'#home'">首页</a>
             </li>
             <li>
-              <a id="demo2Btn" href="#products" class="demoBtn">产品</a>
+              <a v-scroll-to="'#products'">产品</a>
             </li>
             <li>
-              <a id="demo3Btn" href="#service" class="demoBtn">服务</a>
+              <a v-scroll-to="'#service'">服务</a>
             </li>
             <li>
-              <a id="demo4Btn" href="#training" class="demoBtn">培训</a>
+              <a v-scroll-to="'#training'">培训</a>
             </li>
             <li>
-              <a id="demo5Btn" href="#about" class="demoBtn">关于我们</a>
+              <a v-scroll-to="'#about'">关于我们</a>
             </li>
           </ul>
         </div>
@@ -148,15 +148,19 @@
 
 <script>
   /* eslint-disable no-new */
+  import Vue from 'vue';
+  console.log(Vue);
+
+  import VueScrollTo from 'vue-scrollto';
   import $ from '../../../lib/jquery-1.11.3.min.js';
   import Swiper from '../../../lib/swiper.min.js';
-//  require('../../../lib/scroll.min.js');
   import vfooter from '../footer/footer.vue';
   import products from '../products/products.vue';
   import service from '../service/service.vue';
   import training from '../training/training.vue';
   import about from '../about/about.vue';
   const DEFAULTLEN = 8;
+  Vue.use(VueScrollTo);
   export default {
     props: {},
     data() {

@@ -8,13 +8,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="services-wrapper col-md-4 active" v-for="(service, index) in services" >
-          <div class="service-name text-center">{{service.name}}<i class="iconfont icon-training"></i></div>
+        <div class="services-wrapper col-md-4" v-for="(service, index) in services">
           <div class="service-con">
             <ul>
-              <li class="text-center" :class="`col-md-${12/service.infos.length}`" v-for="info in service.infos">{{info}}</li>
+              <li class="text-center"  v-for="info in service.infos">{{info}}</li>
             </ul>
           </div>
+          <div class="service-name text-center"><i class="iconfont" :class="`icon-${service.icon}`"></i>{{service.name}}</div>
         </div>
       </div>
     </div>
@@ -30,15 +30,28 @@
         services: [
           {
             name: '数据库服务',
-            infos: ['基于Galera集群+中间层', '基于Group Replication+中间层']
+            icon: 'training',
+            infos: ['MySQL全套解决方案', '基于Galera的MySQL Cluster解决方案', '基于Group Replication的MySQL解决方案', '基于Key-Value存储的解决方案', '产品维护服务', '性能优化服务']
           },
           {
             name: '大数据服务',
-            infos: ['数据库服务代维', '数据库服务代维', '性能优化']
+            icon: 'shujuku1',
+            infos: ['数据库日志中心构建与分析预警', '数据库资源分析预警', '数据库巡检与预警']
           },
           {
             name: '数据库一体机',
-            infos: ['数据库、机器日志分析', '数据汇总、预警', '监控巡检报表', '构建信息中心']
+            icon: 'dailimoren',
+            infos: ['MySQL数据库一体机', 'DM数据库一体机', 'Key-Value数据库一体机']
+          },
+          {
+            name: '极数学院',
+            icon: 'Publicwelfare',
+            infos: ['面向社会人员的MySQL相关培训', '面向企业的MySQL相关培训', '产品相关培训']
+          },
+          {
+            name: '云服务',
+            icon: 'ic_reliable',
+            infos: ['自动化审核云服务', '数据库私有云', '公有云服务']
           }
         ]
       };
@@ -57,52 +70,107 @@
 <style lang="scss" rel="stylesheet/scss">
 .service{
   background: #fcfcfc;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   .iconfont{
     display: block;
+    width: 60px;
+    height: 60px;
+    line-height: 54px;
+    margin: 0 auto;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background: #1dabdf;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    top: -50%;
+    font-size: 35px;
   }
-  .service-con{
-    opacity: 0;
-    transition: display 0.35s;
-    overflow: hidden;
+  .services-wrapper{
+    margin-bottom: 30px;
+    padding-left: 55px;
+    padding-right: 55px;
+    .service-con{
+      display: flex;
+      background: #fff;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      transition: all 0.35s;
+      overflow: hidden;
+      padding-bottom: 1px;
+      height: 185px;
+      border: 1px solid #eee;
+      border-bottom: 1px solid #1dabdf;
+      justify-content: center;
+      align-items: center;
+      color: #232323;
+      transition: color .35s;
+      &:hover{
+        background: #eee;
+        color: #1dabdf;
+        transition: color .35s;
+      }
     ul{
       overflow: hidden;
       margin: 0;
     }
-  }
-  .services-wrapper{
-    &:after{
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      border-bottom: 2px solid #1dabdf;
-      transition: width .2s ease-in-out;
+    }
+    .service-name{
+      position: relative;
+      border: 1px solid #eee;
+      border-top: none;
+      background: #fff;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      height: 70px;
+      line-height: 75px;
+      color: #1dabdf;
+      font-size: 15px;
+      font-weight: bold;
+      &:hover{
+        background: #eee;
+      }
+
+      &:after{
+         content: '';
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         width: 0;
+         border-bottom: 2px solid #1dabdf;
+         transition: width .2s ease-in-out;
+       }
     }
     &.active{
-      &:after{
-        content: '';
-        position: absolute;
-        left: 30%;
-        bottom: 0;
-        width: 40%;
-        border-bottom: 2px solid #1dabdf;
-        transition: width .2s ease-in-out;
+      .service-name{
+        &:after{
+           content: '';
+           position: absolute;
+           left: 30%;
+           bottom: 0;
+           width: 40%;
+           border-bottom: 2px solid #1dabdf;
+           transition: width .2s ease-in-out;
+         }
       }
       .service-con{
-        position: absolute;
+        position: relative;
         padding: 35px;
+        height: 100%;
         opacity: 1;
         transition: opacity 0.45s;
-        width: 895px;
-        left: 50%;
+        width: 100%;
+        left: 0;
         margin: 20px auto;
         right: 0;
         border-radius: 4px;
         background: #eee;
       }
     }
+    &:nth-child(3n+1){
+      clear: both;
+     }
   }
 }
 </style>

@@ -21,8 +21,8 @@
         <div class="col-md-6">
           <h2>联系我们</h2>
           <div class="row">
-            <div class="col-md-6">185-0103-6362</div>
-            <div class="col-md-6">marketing@cloud-ark.com</div>
+            <div class="col-md-6"><i class="iconfont icon-training"></i> 185-0103-6362</div>
+            <div class="col-md-6"><i class="iconfont icon-training"></i> marketing@cloud-ark.com</div>
           </div>
           <div class="row">
             <div class="col-md-6">
@@ -67,6 +67,9 @@
     width:135px;
     height: 35px;
     color: #fff;
+  }
+  .iconfont{
+    font-size: 14px;
   }
 }
 
