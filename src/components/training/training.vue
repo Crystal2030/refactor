@@ -3,8 +3,8 @@
     <div class="container">
       <div class="row">
         <div class="section-title">
-          <h3 class="content-title-en">TRAINING</h3>
-          <h2 class="content-title-ch">培训</h2>
+          <h3 class="content-title-en">SCHOOL</h3>
+          <h2 class="content-title-ch">极数学院</h2>
         </div>
       </div>
       <div class="row">
@@ -13,7 +13,7 @@
             <figure class="effect-bubba">
               <img src="static/images/info1.jpg" alt="img02" class="img-responsive">
               <figcaption>
-                <h2>数据库公共培训</h2>
+                <h2>面向社会人员的MySQL相关培训</h2>
                 <ul class="train-info">
                   <li>MySQL运维方向培训</li>
                   <li>MySQL内核开发培训</li>
@@ -28,7 +28,7 @@
             <figure class="effect-bubba">
               <img src="static/images/info2.jpg" alt="img02" class="img-responsive">
               <figcaption>
-                <h2>数据库公共培训</h2>
+                <h2>面向企业的MySQL相关培训</h2>
                 <ul class="train-info">
                   <li>MySQL运维方向培训</li>
                   <li>MySQL内核开发培训</li>
@@ -43,7 +43,7 @@
             <figure class="effect-bubba">
               <img src="static/images/info3.jpg" alt="img02" class="img-responsive">
               <figcaption>
-                <h2>数据库公共培训</h2>
+                <h2>产品相关培训</h2>
                 <ul class="train-info">
                   <li>MySQL运维方向培训</li>
                   <li>MySQL内核开发培训</li>

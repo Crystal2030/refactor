@@ -11,14 +11,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand page-scroll" href="/#page-top"><img
+          <a class="navbar-brand page-scroll" href="/home"><img
             src="static/images/logo-white.png" alt="ark logo"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li class="hidden">
-              <a href="/#page-top"></a>
+              <a href="/home"></a>
             </li>
             <li>
               <router-link v-scroll-to="{el: '#home'}" to="home">首页</router-link>
@@ -43,6 +43,7 @@
     </nav>
     <!-- Swiper -->
     <div id="home" class="swiper-container">
+      <canvas class="constellation" width="1366" height="653"></canvas>
       <div class="parallax-bg" style="background-image:url('static/images/slider-bg.jpg'); background-size: cover;"
            data-swiper-parallax="-23%"></div>
       <div class="swiper-wrapper">
@@ -167,56 +168,6 @@
         showAll: false,
         defaultLen: DEFAULTLEN, // 默认显示几条产品
         toggleText: '查看全部',
-        products: [
-          {
-            name: '自动化审核平台',
-            desc: '自动化审核平台'
-          },
-          {
-            name: 'MySQL实时异构同步平台',
-            desc: 'MySQL实时异构同步平台'
-          },
-          {
-            name: '自动化备份平台',
-            desc: '自动化备份平台'
-          },
-          {
-            name: '自动化归档平台',
-            desc: '自动化归档平台'
-          },
-          {
-            name: '智能监控平台',
-            desc: '智能监控平台'
-          },
-          {
-            name: '自动化运维管理平台',
-            desc: '自动化运维管理平台'
-          },
-          {
-            name: '中间件',
-            desc: '中间件'
-          },
-          {
-            name: 'Arkagent',
-            desc: '功能丰富的Agent'
-          },
-          {
-            name: '大数据服务',
-            desc: '大数据服务'
-          },
-          {
-            name: '极数学院培训',
-            desc: '极数学院培训'
-          },
-          {
-            name: '慢查询分析与自动化优化',
-            desc: '慢查询分析与自动化优化'
-          },
-          {
-            name: '自动化数据库巡检',
-            desc: '自动化数据库巡检'
-          }
-        ],
         scrollY: 0,
         mainHeight: []
       };
@@ -233,6 +184,12 @@
         loop: true
       });
       this.animationHeader();
+      this.constellation();
+      $('canvas').constellation({
+        line: {
+          color: 'rgba(255, 255, 255, 1)'
+        }
+      });
     },
     methods: {
       animationHeader() {
@@ -267,15 +224,177 @@
 
         init();
       },
-      toggleShowAll() {
-        this.showAll = !this.showAll;
-        if (this.showAll) {
-          this.toggleText = '查看全部';
-          this.defaultLen = DEFAULTLEN;
-        } else {
-          this.defaultLen = this.products.length;
-          this.toggleText = '收起';
-        }
+      constellation() {
+        (function ($, window) {
+          /**
+           * Makes a nice constellation on canvas
+           * @constructor Constellation
+           */
+          function Constellation (canvas, options) {
+            var $canvas = $(canvas);
+            var context = canvas.getContext('2d');
+            var defaults = {
+              star: {
+                color: 'rgba(255, 255, 255, 1)',
+                width: 1
+              },
+              line: {
+                color: 'rgba(255, 255, 255, 1)',
+                width: 0.2
+              },
+              position: {
+                x: 0, // This value will be overwritten at startup
+                y: 0 // This value will be overwritten at startup
+              },
+              width: window.innerWidth,
+              height: window.innerHeight,
+              velocity: 0.1,
+              length: 100,
+              distance: 120,
+              radius: 150,
+              stars: []
+            };
+            var config = $.extend(true, {}, defaults, options);
+
+            function Star () {
+              this.x = Math.random() * canvas.width;
+              this.y = Math.random() * canvas.height;
+
+              this.vx = (config.velocity - (Math.random() * 0.5));
+              this.vy = (config.velocity - (Math.random() * 0.5));
+
+              this.radius = Math.random() * config.star.width;
+            }
+
+            Star.prototype = {
+              create: function() {
+                context.beginPath();
+                context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                context.fill();
+              },
+
+              animate: function() {
+                var i;
+                for (i = 0; i < config.length; i++) {
+                  var star = config.stars[i];
+                  if (star.y < 0 || star.y > canvas.height) {
+                    star.vx = star.vx;
+                    star.vy = -star.vy;
+                  } else if (star.x < 0 || star.x > canvas.width) {
+                    star.vx = -star.vx;
+                    star.vy = star.vy;
+                  }
+
+                  star.x += star.vx;
+                  star.y += star.vy;
+                }
+              },
+
+              line: function() {
+                var length = config.length;
+                var iStar;
+                var jStar;
+                var i;
+                var j;
+
+                for (i = 0; i < length; i++) {
+                  for (j = 0; j < length; j++) {
+                    iStar = config.stars[i];
+                    jStar = config.stars[j];
+
+                    if (
+                      (iStar.x - jStar.x) < config.distance &&
+                      (iStar.y - jStar.y) < config.distance &&
+                      (iStar.x - jStar.x) > -config.distance &&
+                      (iStar.y - jStar.y) > -config.distance
+                    ) {
+                      if (
+                        (iStar.x - config.position.x) < config.radius &&
+                        (iStar.y - config.position.y) < config.radius &&
+                        (iStar.x - config.position.x) > -config.radius &&
+                        (iStar.y - config.position.y) > -config.radius
+                      ) {
+                        context.beginPath();
+                        context.moveTo(iStar.x, iStar.y);
+                        context.lineTo(jStar.x, jStar.y);
+                        context.stroke();
+                        context.closePath();
+                      }
+                    }
+                  }
+                }
+              }
+            };
+
+            this.createStars = function () {
+              var length = config.length;
+              var star;
+              var i;
+
+              context.clearRect(0, 0, canvas.width, canvas.height);
+
+              for (i = 0; i < length; i++) {
+                config.stars.push(new Star());
+                star = config.stars[i];
+
+                star.create();
+              }
+
+              star.line();
+              star.animate();
+            };
+
+            this.setCanvas = function () {
+              canvas.width = config.width;
+              canvas.height = config.height;
+            };
+
+            this.setContext = function () {
+              context.fillStyle = config.star.color;
+              context.strokeStyle = config.line.color;
+              context.lineWidth = config.line.width;
+            };
+
+            this.setInitialPosition = function () {
+              if (!options || !options.hasOwnProperty('position')) {
+                config.position = {
+                  x: canvas.width * 0.5,
+                  y: canvas.height * 0.5
+                };
+              }
+            };
+
+            this.loop = function (callback) {
+              callback();
+
+              window.requestAnimationFrame(function () {
+                this.loop(callback);
+              }.bind(this));
+            };
+
+            this.bind = function () {
+              $canvas.on('mousemove', function(e) {
+                config.position.x = e.pageX - $canvas.offset().left;
+                config.position.y = e.pageY - $canvas.offset().top;
+              });
+            };
+
+            this.init = function () {
+              this.setCanvas();
+              this.setContext();
+              this.setInitialPosition();
+              this.loop(this.createStars);
+              this.bind();
+            };
+          }
+
+          $.fn.constellation = function (options) {
+            return this.each(function () {
+              var c = new Constellation(this, options);
+              c.init();
+            });
+          };
+        })($, window);
       }
     },
     components: {
@@ -289,6 +408,11 @@
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
+  .constellation {
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+  }
   .navbar-default {
     background-color: #222;
     border-color: transparent;

@@ -13,15 +13,16 @@
           </p>
         </div>
       </div>
-      <div class="row products" v-cloak>
-        <div class="col-md-4 text-center product" v-for="(product, index) in products" v-show="index < defaultLen">
-          <i class="iconfont" :class="`icon-${product.icon}`"></i>
-          <div class="product-name">{{product.name}}</div>
+        <div class="row products" v-cloak>
+          <div class="col-md-4 text-center product" v-for="(product, index) in products" v-show="index < defaultLen">
+            <i class="iconfont" :class="`icon-${product.icon}`"></i>
+            <div class="product-name">{{product.name}}</div>
+          </div>
+          <div class="col-md-12">
+            <span class="show-more" @click.prevent="toggleShowAll">{{toggleText}}</span>
+          </div>
         </div>
-        <div class="col-md-12">
-          <span class="show-more" @click="toggleShowAll">{{toggleText}}</span>
-        </div>
-      </div>
+
     </div>
   </div>
 </template>
@@ -41,71 +42,72 @@
           {
             name: '自动化审核平台',
             desc: '自动化审核平台',
-            icon: 'shenhe'
+            icon: 'shenhe3'
           },
           {
             name: 'MySQL实时异构同步平台',
             desc: 'MySQL实时异构同步平台',
-            icon: 'shenhe'
+            icon: 'agreement'
           },
           {
             name: '自动化备份平台',
             desc: '自动化备份平台',
-            icon: 'shenhe'
+            icon: 'beifentongxunlu'
           },
           {
             name: '自动化归档平台',
             desc: '自动化归档平台',
-            icon: 'shenhe'
+            icon: 'crm26'
           },
           {
             name: '智能监控平台',
             desc: '智能监控平台',
-            icon: 'shenhe'
+            icon: 'jiankong2'
           },
           {
             name: '自动化运维管理平台',
             desc: '自动化运维管理平台',
-            icon: 'shenhe'
+            icon: 'dashujujiaoyi'
           },
           {
             name: '中间件',
             desc: '中间件',
-            icon: 'shenhe'
+            icon: 'daili'
           },
           {
             name: 'Arkagent',
             desc: '功能丰富的Agent',
-            icon: 'shenhe'
+            icon: 'dailishang'
           },
           {
             name: '大数据服务',
             desc: '大数据服务',
-            icon: 'shenhe'
+            icon: 'dashuju3'
           },
           {
             name: '极数学院培训',
             desc: '极数学院培训',
-            icon: 'shenhe'
+            icon: 'peixun1'
           },
           {
             name: '慢查询分析与自动化优化',
             desc: '慢查询分析与自动化优化',
-            icon: 'shenhe'
+            icon: 'shujuchaxun'
           },
           {
             name: '自动化数据库巡检',
             desc: '自动化数据库巡检',
-            icon: 'shenhe'
+            icon: 'xunjian'
           }
         ]
+
       };
     },
 
     methods: {
       toggleShowAll() {
         this.showAll = !this.showAll;
-        if (this.showAll) {
+        if (!this.showAll) {
           this.toggleText = '查看全部';
           this.defaultLen = DEFAULTLEN;
         } else {
@@ -118,11 +120,11 @@
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-
   .products-com {
     .product {
       margin-bottom: 40px;
-      [class^="icon-"] {
+      transition: display .35s;
+      .iconfont {
         display: block;
         font-size: 50px;
         margin-bottom: 10px;
