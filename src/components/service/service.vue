@@ -52,6 +52,11 @@
             name: '云服务',
             icon: 'ic_reliable',
             infos: ['自动化审核云服务', '数据库私有云', '公有云服务']
+          },
+          {
+            name: '数据库一体机',
+            icon: 'dailimoren',
+            infos: ['MySQL数据库一体机', 'DM数据库一体机', 'Key-Value数据库一体机']
           }
         ]
       };
