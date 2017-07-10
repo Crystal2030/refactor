@@ -266,6 +266,175 @@ body {
 }
 
 
+figure {
+  position: relative;
+  overflow: hidden;
+  margin: 10px 1%;
+  background: #726FB9;
+  text-align: center;
+  cursor: pointer;
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &::before,&::after{
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      bottom: 30px;
+      left: 30px;
+      content: '';
+      opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+    }
+    &::before{
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      -webkit-transform: scale(0,1);
+      transform: scale(0,1);
+    }
+    &::after{
+      border-right: 1px solid #fff;
+      border-left: 1px solid #fff;
+      -webkit-transform: scale(1,0);
+      transform: scale(1,0);
+    }
+  }
+  &.effect-bubba {
+    background: #000;
+    margin-bottom: 30px;
+    h2 {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-top: 40%;
+      width: 80%;
+      margin: auto;
+      -webkit-transition: -webkit-transform 0.35s;
+      transition: transform 0.35s;
+      -webkit-transform: translate3d(0,-20px,0);
+      transform: translate3d(0,-20px,0);
+    }
+    ul.train-info>li{
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 2px 2.5em;
+      opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: translate3d(0,20px,0);
+      transform: translate3d(0,20px,0);
+    }
+    img{
+      opacity: .8;
+      transition: opacity 0.35s;
+    }
+    &:hover{
+      img{
+        opacity: 0.4;
+      }
+      figcaption::before, figcaption::after{
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+      h2, .train-info>li{
+        opacity: 1;
+        -webkit-transform: translate3d(0,-30px,0);
+        transform: translate3d(0,-30px,0);
+        font-size: 18px;
+      }
+      .train-info>li{
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+
+.vira-card{
+  text-align: center;
+  /*margin-bottom: 45px;*/
+  .vira-card-header{
+    margin-bottom: 35px;
+    .card-icon{
+      border: 1px solid #1dabdf;
+      border-radius: 100%;
+      display: inline-block;
+      height: 120px;
+      width: 120px;
+      line-height: 120px;
+      position: relative;
+      &:after{
+        content: '';
+        height: 100px;
+        width: 100px;
+        background-color: #1dabdf;
+        border-radius: 100%;
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          width: 120px;
+          height: 12px;
+        }
+      }
+      span{
+        color: #fff;
+        font-size: 45px;
+        position: relative;
+        z-index: 1;
+      }
+      .iconfont{
+        font-size: 30px;
+        top: 50%;
+        margin-top: -25px;
+        z-index: 2;
+        border: none;
+      }
+    }
+  }
+  &:hover{
+    .vira-card-header{
+      .card-icon{
+        &:after{
+          height: 120px;
+          width: 120px;
+          top: -1px;
+          left: -1px;
+        }
+      }
+    }
+  }
+  .vira-card-content{
+    h3{
+      position: relative;
+      margin-bottom: 60px;
+      font-size: 15px;
+      &:after{
+        content: '';
+        height: 1px;
+        width: 44px;
+        background-color: #1dabdf;
+        position: absolute;
+        top: 42px;
+        left: calc(50% - 22px);
+      }
+    }
+    p{
+      font-size: 15px;
+    }
+    .social-icons{
+      margin-top: 30px;
+    }
+  }
+}
 
 
 

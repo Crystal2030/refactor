@@ -27,10 +27,19 @@
               <router-link v-scroll-to="{el: '#products'}" to="home">产品</router-link>
             </li>
             <li>
-              <router-link v-scroll-to="{el: '#service'}" to="home">服务</router-link>
+              <router-link v-scroll-to="{el: '#solution'}" to="home">解决方案</router-link>
             </li>
             <li>
-              <router-link v-scroll-to="{el: '#training'}" to="home">培训</router-link>
+              <router-link v-scroll-to="{el: '#largeData'}" to="home">大数据服务</router-link>
+            </li>
+            <li>
+              <router-link v-scroll-to="{el: '#machine'}" to="home">数据库一体机</router-link>
+            </li>
+            <li>
+              <router-link v-scroll-to="{el: '#cloudService'}" to="home">云服务</router-link>
+            </li>
+            <li>
+              <router-link v-scroll-to="{el: '#school'}" to="home">极数学院</router-link>
             </li>
             <li>
               <router-link v-scroll-to="{el: '#about'}" to="home">关于我们</router-link>
@@ -115,7 +124,7 @@
           <li class="col-md-3">
             <a href="#" target="_blank">
               <i class="iconfont icon-shujuku"></i>
-              <h2>数据库运维经验丰富</h2>
+              <h2>多年数据库运维经验</h2>
             </a>
           </li>
 
@@ -137,10 +146,16 @@
     </div>
     <!--product-->
     <products id="products"></products>
-    <!--service-->
-    <service id="service"></service>
+    <!--solution-->
+    <solution id="solution"></solution>
+    <!--bigdataservice-->
+    <largeData id="largeData"></largeData>
+    <!--machine-->
+    <machine id="machine"></machine>
+    <!--cloudService-->
+    <cloudService id="cloudService"></cloudService>
     <!--training-->
-    <training id="training"></training>
+    <training id="school"></training>
     <!--about-->
     <about id="about"></about>
     <vfooter></vfooter>
@@ -155,7 +170,10 @@
   import Swiper from '../../../lib/swiper.min.js';
   import vfooter from '../footer/footer.vue';
   import products from '../products/products.vue';
-  import service from '../service/service.vue';
+  import solution from '../solution/solution.vue';
+  import largeData from '../largeData/largeData.vue';
+  import machine from '../machine/machine.vue';
+  import cloudService from '../cloudService/cloudService.vue';
   import training from '../training/training.vue';
   import about from '../about/about.vue';
   const DEFAULTLEN = 8;
@@ -399,7 +417,10 @@
     },
     components: {
       products,
-      service,
+      solution,
+      largeData,
+      machine,
+      cloudService,
       training,
       about,
       vfooter

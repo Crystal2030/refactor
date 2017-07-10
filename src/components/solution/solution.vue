@@ -3,20 +3,27 @@
     <div class="container">
       <div class="row">
         <div class="section-title">
-          <h3 class="content-title-en">SERVICE</h3>
-          <h2 class="content-title-ch">服务</h2>
+          <h3 class="content-title-en">SOLUTION</h3>
+          <h2 class="content-title-ch">解决方案</h2>
         </div>
+        <p class="col-md-12 col-sm-12 col-xs-12 text-center">
+          在千变万化的架构中，找到您想要的了吗？
+        </p>
       </div>
+
       <div class="row">
-        <div class="services-wrapper col-md-4" v-for="(service, index) in services">
-          <div class="service-con">
-            <ul>
-              <li class="text-center"  v-for="info in service.infos">{{info}}</li>
-            </ul>
+        <div class="col-md-4" v-for="(service, index) in services">
+          <div class="ot-portfolio-item">
+            <figure class="effect-bubba">
+              <img src="static/images/info1.jpg" alt="img02" class="img-responsive">
+              <figcaption>
+                <h2>{{service}}</h2>
+              </figcaption>
+            </figure>
           </div>
-          <div class="service-name text-center"><i class="iconfont" :class="`icon-${service.icon}`"></i>{{service.name}}</div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -27,38 +34,7 @@
   export default {
     data() {
       return {
-        services: [
-          {
-            name: '数据库服务',
-            icon: 'training',
-            infos: ['MySQL全套解决方案', '基于Galera的MySQL Cluster解决方案', '基于Group Replication的MySQL解决方案', '基于Key-Value存储的解决方案', '产品维护服务', '性能优化服务']
-          },
-          {
-            name: '大数据服务',
-            icon: 'shujuku1',
-            infos: ['数据库日志中心构建与分析预警', '数据库资源分析预警', '数据库巡检与预警']
-          },
-          {
-            name: '数据库一体机',
-            icon: 'dailimoren',
-            infos: ['MySQL数据库一体机', 'DM数据库一体机', 'Key-Value数据库一体机']
-          },
-          {
-            name: '极数学院',
-            icon: 'Publicwelfare',
-            infos: ['面向社会人员的MySQL相关培训', '面向企业的MySQL相关培训', '产品相关培训']
-          },
-          {
-            name: '云服务',
-            icon: 'ic_reliable',
-            infos: ['自动化审核云服务', '数据库私有云', '公有云服务']
-          },
-          {
-            name: '数据库一体机',
-            icon: 'dailimoren',
-            infos: ['MySQL数据库一体机', 'DM数据库一体机', 'Key-Value数据库一体机']
-          }
-        ]
+        services: ['MySQL全套解决方案', '基于Galera的MySQL Cluster解决方案', '基于Group Replication的MySQL解决方案', '基于Key-Value存储的解决方案', '产品维护服务', '性能优化服务']
       };
     },
     methods: {
@@ -94,8 +70,8 @@
   }
   .services-wrapper{
     margin-bottom: 30px;
-    padding-left: 55px;
-    padding-right: 55px;
+    /*padding-left: 55px;*/
+    /*padding-right: 55px;*/
     .service-con{
       display: flex;
       background: #fff;

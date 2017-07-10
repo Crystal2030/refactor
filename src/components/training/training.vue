@@ -6,6 +6,9 @@
           <h3 class="content-title-en">SCHOOL</h3>
           <h2 class="content-title-ch">极数学院</h2>
         </div>
+        <p class="col-md-12 col-sm-12 col-xs-12 text-center">
+          极致技术，乐在分享
+        </p>
       </div>
       <div class="row">
         <div class="col-md-4">
@@ -14,11 +17,6 @@
               <img src="static/images/info1.jpg" alt="img02" class="img-responsive">
               <figcaption>
                 <h2>面向社会人员的MySQL相关培训</h2>
-                <ul class="train-info">
-                  <li>MySQL运维方向培训</li>
-                  <li>MySQL内核开发培训</li>
-                  <li>MySQL开发方向培训</li>
-                </ul>
               </figcaption>
             </figure>
           </div>
@@ -29,11 +27,6 @@
               <img src="static/images/info2.jpg" alt="img02" class="img-responsive">
               <figcaption>
                 <h2>面向企业的MySQL相关培训</h2>
-                <ul class="train-info">
-                  <li>MySQL运维方向培训</li>
-                  <li>MySQL内核开发培训</li>
-                  <li>MySQL开发方向培训</li>
-                </ul>
               </figcaption>
             </figure>
           </div>
@@ -44,11 +37,6 @@
               <img src="static/images/info3.jpg" alt="img02" class="img-responsive">
               <figcaption>
                 <h2>产品相关培训</h2>
-                <ul class="train-info">
-                  <li>MySQL运维方向培训</li>
-                  <li>MySQL内核开发培训</li>
-                  <li>MySQL开发方向培训</li>
-                </ul>
               </figcaption>
             </figure>
           </div>
@@ -64,93 +52,7 @@
 
 <style lang="scss" rel="stylesheet/scss">
   .training{
-    figure {
-      position: relative;
-      overflow: hidden;
-      margin: 10px 1%;
-      background: #726FB9;
-      text-align: center;
-      cursor: pointer;
-      figcaption {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        &::before,&::after{
-          position: absolute;
-          top: 30px;
-          right: 30px;
-          bottom: 30px;
-          left: 30px;
-          content: '';
-          opacity: 0;
-          -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-          transition: opacity 0.35s, transform 0.35s;
-        }
-        &::before{
-          border-top: 1px solid #fff;
-          border-bottom: 1px solid #fff;
-          -webkit-transform: scale(0,1);
-          transform: scale(0,1);
-        }
-        &::after{
-          border-right: 1px solid #fff;
-          border-left: 1px solid #fff;
-          -webkit-transform: scale(1,0);
-          transform: scale(1,0);
-        }
-      }
-      &.effect-bubba {
-        background: #000;
-        margin-bottom: 30px;
-        h2 {
-          color: #fff;
-          font-size: 15px;
-          font-weight: 700;
-          text-transform: uppercase;
-          padding-top: 30%;
-          -webkit-transition: -webkit-transform 0.35s;
-          transition: transform 0.35s;
-          -webkit-transform: translate3d(0,-20px,0);
-          transform: translate3d(0,-20px,0);
-        }
-        ul.train-info>li{
-          color: #fff;
-          font-size: 13px;
-          font-weight: 500;
-          padding: 2px 2.5em;
-          opacity: 0;
-          -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-          transition: opacity 0.35s, transform 0.35s;
-          -webkit-transform: translate3d(0,20px,0);
-          transform: translate3d(0,20px,0);
-        }
-        img{
-          opacity: .8;
-          transition: opacity 0.35s;
-        }
-        &:hover{
-          img{
-            opacity: 0.4;
-          }
-          figcaption::before, figcaption::after{
-            opacity: 1;
-            -webkit-transform: scale(1);
-            transform: scale(1);
-          }
-          h2, .train-info>li{
-            opacity: 1;
-            -webkit-transform: translate3d(0,-50px,0);
-            transform: translate3d(0,-50px,0);
-            font-size: 18px;
-          }
-          .train-info>li{
-            font-size: 12px;
-          }
-        }
-      }
-    }
+    background: #fcfcfc;
     .index-content{
       .icon-company {
         color: #63b7fc!important;

@@ -5,11 +5,10 @@
         <div class="col-md-12 col-sm-12 col-xs-12" ref="provider">
           <div class="section-title">
             <h3 class="content-title-en">PRODUCTS</h3>
-            <h2 class="content-title-ch">产品</h2>
+            <h2 class="content-title-ch">企业产品</h2>
           </div>
           <p class="col-md-12 col-sm-12 col-xs-12 text-center">
-            极数云舟拥有国内一系列专家，技术领域涉及MySQL、Redis、Hbase等数据库平台架构，为用户提供全套平台解决方案。主要产品包括：Estimate(MySQL
-            审核)、MAMP(DB管理平台)、Daas(数据即服务)
+            总有一款产品满足您的需求，问题将迎刃而解
           </p>
         </div>
       </div>

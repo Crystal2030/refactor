@@ -60,7 +60,7 @@
 
 <style lang="scss" rel="stylesheet/scss">
 .about{
-  background: #fcfcfc;
+  background: #fff;
   padding-bottom: 60px;
   .send{
     background: #1dabdf;
