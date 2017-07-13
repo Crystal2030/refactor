@@ -6,7 +6,7 @@
           <h3 class="content-title-en">SCHOOL</h3>
           <h2 class="content-title-ch">极数学院</h2>
         </div>
-        <p class="col-md-12 col-sm-12 col-xs-12 text-center">
+        <p class="col-md-12 col-sm-12 col-xs-12 text-center section-dec">
           极致技术，乐在分享
         </p>
       </div>

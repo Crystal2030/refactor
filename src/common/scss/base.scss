@@ -308,7 +308,7 @@ figure {
     margin-bottom: 30px;
     h2 {
       color: #fff;
-      font-size: .15rem;
+      font-size: 15px;
       font-weight: 700;
       text-transform: uppercase;
       padding-top: 40%;
@@ -347,10 +347,10 @@ figure {
         opacity: 1;
         -webkit-transform: translate3d(0,-.3rem,0);
         transform: translate3d(0,-.3rem,0);
-        font-size: .18rem;
+        font-size: 18px;
       }
       .train-info>li{
-        font-size: .12rem;
+        font-size: 12px;
       }
     }
   }
@@ -361,7 +361,8 @@ figure {
   text-align: center;
   /*margin-bottom: 45px;*/
   .vira-card-header{
-    margin-bottom: .35rem;
+    margin-top: .15rem;
+    margin-bottom: .25rem;
     .card-icon{
       border: 1px solid #1dabdf;
       border-radius: 100%;
@@ -426,19 +427,19 @@ figure {
     h3{
       position: relative;
       margin-bottom: .6rem;
-      font-size: .15rem;
+      font-size: 15px;
       &:after{
         content: '';
         height: .01rem;
         width: .44rem;
         background-color: #1dabdf;
         position: absolute;
-        top: .42rem;
+        top: .3rem;
         left: calc(50% - .22rem);
       }
     }
     p{
-      font-size: .15rem;
+      font-size: 15px;
     }
     .social-icons{
       margin-top: .3rem;

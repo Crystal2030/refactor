@@ -125,14 +125,14 @@
       transition: display .35s;
       .iconfont {
         display: block;
-        font-size: .5rem;
+        font-size: 50px;
         margin-bottom: .1rem;
       }
       &:hover {
         color: #2aacdd;
       }
       .product-name{
-        font-size: .15rem;
+        font-size: 15px;
       }
     }
     .show-more {

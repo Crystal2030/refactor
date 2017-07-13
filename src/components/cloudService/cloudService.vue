@@ -35,7 +35,7 @@
         services: [
           {name: '自动化审核云服务', icon: 'dashujuyuyunjisuanyingyong'},
           {name: '数据库私有云', icon: 'siyouyun'},
-          {name: '公有云服务', icon: 'gongyouyun'}
+          {name: '公有云服务', icon: 'chanyeyunyingyongfuwu'}
         ]
       };
     }
@@ -47,9 +47,6 @@
   background: #fff;
   .iconfont{
     font-size: .5rem!important;
-  }
-  .icon-gongyouyun{
-    font-size: .6rem!important;
   }
 }
 </style>

@@ -473,7 +473,7 @@
             font-family: "Roboto",sans-serif;
             text-transform: uppercase;
             font-weight: bold;
-            font-size: .12rem;
+            font-size: 14px;
             letter-spacing: 1px;
             position: relative;
             transition: color .2s ease-in-out;
@@ -566,19 +566,19 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: .35rem;
-        line-height: .35rem;
+        height: 35px;
+        line-height: 35px;
         font-family: "Open Sans", Sans-serif;
-        font-size: .32rem;
+        font-size: 32px;
         font-weight: normal;
         margin: 0;
         &.content-title-en {
-          font-size: .24rem;
+          font-size: 28px;
         }
       }
     }
     .section-dec{
-      font-size: .24rem;
+      font-size: 18px;
     }
 
     .box-container {
@@ -598,7 +598,7 @@
             text-decoration: none;
             h2 {
               margin-top: 0;
-              font-size: .12rem;
+              font-size: 14px;
               height: .23rem;
               overflow: hidden;
               color: #333;
@@ -611,9 +611,9 @@
               padding-top: .1rem;
               display: block;
               color: #3e3e3e;
-              font-size: .45rem;
+              font-size: 45px;
               &:hover {
-                font-size: .5rem;
+                font-size: 50px;
                 transition: font-size .3s ease-in-out;
               }
             }
@@ -630,7 +630,7 @@
       height: 3.7rem;
       background: #000;
       .swiper-slide {
-        font-size: .18rem;
+        font-size: 18px;
         color: #fff;
         text-align: center;
         -webkit-box-sizing: border-box;
@@ -649,11 +649,11 @@
         background-position: center;
       }
       .swiper-slide .title {
-        font-size: .4rem;
+        font-size: 40px;
         font-weight: bold;
       }
       .swiper-slide .subtitle {
-        font-size: .2rem;
+        font-size: 20px;
       }
       .swiper-slide .text {
         margin: 0 auto;

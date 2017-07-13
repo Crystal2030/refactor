@@ -63,7 +63,7 @@
   background: #fff;
   padding-bottom: .6rem;
   h2{
-    font-size: .28rem;
+    font-size: 24px;
     font-weight: 600;
   }
   .send{
@@ -75,7 +75,7 @@
     font-size: .14rem;
   }
   .iconfont{
-    font-size: .24rem;
+    font-size: 18px;
     color: #1dabdf;
   }
 }
