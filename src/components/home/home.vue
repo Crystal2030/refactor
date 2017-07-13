@@ -52,7 +52,7 @@
     </nav>
     <!-- Swiper -->
     <div id="home" class="swiper-container">
-      <canvas class="constellation" width="1366" height="653"></canvas>
+      <canvas class="constellation" width="25.6rem" height="8.7rem"></canvas>
       <div class="parallax-bg" style="background-image:url('static/images/slider-bg.jpg'); background-size: cover;"
            data-swiper-parallax="-23%"></div>
       <div class="swiper-wrapper">
@@ -61,7 +61,7 @@
           <!--<div class="subtitle" data-swiper-parallax="-200">早起的虫儿有鸟吃</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
-              <!--自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容，自动化运维内容-->
+              引领技术潮流，构建高效核心
             </p>
           </div>
         </div>
@@ -70,7 +70,7 @@
           <!--<div class="subtitle" data-swiper-parallax="-200">团队成员很牛逼</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
-              <!--专业团队，一流人才，专业团队，一流人才，专业团队，一流人才，专业团队，一流人才，专业团队，一流人才-->
+              经验丰富，技术过硬，Oracle官方认证是我们的核心竞争力
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@
           <!--<div class="subtitle" data-swiper-parallax="-200">业界领先到企业级产品</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
-              <!--简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。-->
+              我们主打多款数据库高可用产品、周边强大工具以及完善的管理及监控平台
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@
           <!--<div class="subtitle" data-swiper-parallax="-200">大数据时代</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
-              <!--简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。-->
+              这里有最懂你、最贴心的大数据服务，你想知道的，都会告诉你！
             </p>
           </div>
         </div>
@@ -97,7 +97,7 @@
           <!--<div class="subtitle" data-swiper-parallax="-200">培训中的战斗机</div>-->
           <div class="text" data-swiper-parallax="-300">
             <p>
-              <!--简单高效、处理能力可弹性伸缩的计算服务，帮助您快速构建更稳定、安全的应用，提升运维效率，降低 IT 成本，使您更专注于核心业务创新。-->
+              这里有最懂你、最贴心的大数据服务，你想知道的，都会告诉你！
             </p>
           </div>
         </div>
@@ -115,28 +115,28 @@
     <div class="box-container">
       <div class="row">
         <ul>
-          <li class="col-md-3">
-            <a href="#" target="_blank">
+          <li class="col-md-3 col-sm-3 col-xs-3">
+            <a >
               <i class="iconfont icon-hezuohuoban"></i>
               <h2>Oracle官方认证合作伙伴</h2>
             </a>
           </li>
-          <li class="col-md-3">
-            <a href="#" target="_blank">
+          <li class="col-md-3 col-sm-3 col-xs-3">
+            <a >
               <i class="iconfont icon-shujuku"></i>
               <h2>多年数据库运维经验</h2>
             </a>
           </li>
 
-          <li class="col-md-3">
-            <a href="#" target="_blank">
+          <li class="col-md-3 col-sm-3 col-xs-3">
+            <a >
               <i class="iconfont icon-guanyuguwen"></i>
               <h2>业内专家顾问团</h2>
             </a>
           </li>
 
-          <li class="col-md-3">
-            <a href="#" target="_blank">
+          <li class="col-md-3 col-sm-3 col-xs-3">
+            <a >
               <i class="iconfont icon-training"></i>
               <h2>专业深度培训</h2>
             </a>
@@ -166,7 +166,7 @@
   /* eslint-disable no-new */
   import Vue from 'vue';
   import VueScrollTo from 'vue-scrollto';
-  import $ from '../../../lib/jquery-1.11.3.min.js';
+  import $ from 'jquery';
   import Swiper from '../../../lib/swiper.min.js';
   import vfooter from '../footer/footer.vue';
   import products from '../products/products.vue';
@@ -429,284 +429,243 @@
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-  .constellation {
-    position: absolute;
-    top: 0px;
-    z-index: 10;
-  }
-  .navbar-default {
-    background-color: #222;
-    border-color: transparent;
-    .navbar-collapse {
-      border-color: rgba(255,255,255,.02)
+  .home{
+    .constellation {
+      position: absolute;
+      top: 0px;
+      z-index: 10;
     }
-    .navbar-toggle{
-      .icon-bar{
-        background: #fff;
-      }
-      &:hover,&:focus{
-        background: #007aff;
-      }
-    }
-    .navbar-brand {
-      padding: 0px;
-    }
-    .nav{
-      li{
-        a{
-          font-family: "Roboto",sans-serif;
-          text-transform: uppercase;
-          font-weight: bold;
-          letter-spacing: 1px;
-          position: relative;
-          transition: color .2s ease-in-out;
-          color:#fff;
-          cursor: pointer;
-          &:active{
-            color: red;
-          }
-          &:before{
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            border-bottom: 2px solid;
-            transition: width .2s ease-in-out;
-          }
-          &:hover,&:focus{
-            outline: 0;
-            color: #2aacdd;
-            transition: color .2s ease-in-out;
-          }
-          &:hover:before{
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-  @media (min-width:768px) {
-    .navbar-default
-    {
+    .navbar-default {
       background-color: transparent;
-      padding: 25px 0;
-      -webkit-transition:padding .3s;
-      -moz-transition:padding .3s;
-      transition:padding .3s;
-      border:0;
-      .navbar-nav{
-        .active{
-          a{
-            border-radius: 3px
-
+      border-color: transparent;
+      &.navbar-shrink {
+        padding: 0;
+        box-shadow: 0 4px 4px 0 rgba(0,0,0,.1);
+        background-color: #fff;
+        .navbar-toggle{
+          background-color: #1dabdf;
+          .icon-bar{
+            background: #fff;
           }
         }
-      }
-      .navbar-brand {
-        font-size: 2em;
-        -webkit-transition:all .3s;
-        -moz-transition:all .3s;
-        transition:all .3s
-      }
-      &.navbar-shrink {
-        background-color: #fff;
-        box-shadow: 0 4px 4px 0 rgba(0,0,0,.1);
-        padding: 10px 0;
         .navbar-nav{
           a{
             color: #222;
           }
         }
-      }
-    }
-  }
-  .section-title {
-    margin-top: 70px;
-    margin-bottom: 40px;
-    color: #232323;
-    [class^="content-title-"] {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 35px;
-      line-height: 35px;
-      font-size: 32px;
-      font-weight: normal;
-      margin: 0;
-      &.content-title-en {
-        font-size: 24px;
-      }
-    }
-  }
-
-  .box-container {
-    width: 100%;
-    background: #e2e2e2;
-    ul {
-      margin-bottom: 0;
-      height: 100px;
-      text-align: center;
-      li {
-        height: 100px;
-        overflow: hidden;
-        a {
-          display: block;
-          height: 100px;
-          line-height: 65px;
-          text-decoration: none;
-          h2 {
-            margin-top: 0;
-            font-size: 14px;
-            color: #333;
-            font-weight: normal;
-          }
-          img {
-            width: 50px;
-          }
-          .iconfont {
-            padding-top: 10px;
-            display: block;
-            color: #3e3e3e;
-            font-size: 45px;
-            &:hover {
-              font-size: 50px;
-              transition: font-size .3s ease-in-out;
+        .navbar-collapse{
+          &.in{
+            a{
+              color: #fff;
             }
           }
         }
-        &:hover {
-          background: #eee;
+      }
+      .navbar-brand{
+        img{
+          padding-top: 8px;
+          width: 140px;
+        }
+      }
+      .navbar-collapse{
+        li{
+          a{
+            font-family: "Roboto",sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: .12rem;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color .2s ease-in-out;
+            color: #fff;
+            height: .6rem;
+            line-height: .3rem;
+            cursor: pointer;
+            &:active{
+              color: red;
+            }
+            &:before{
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 0;
+              border-bottom: 2px solid;
+              transition: width .2s ease-in-out;
+            }
+            &:hover,&:focus{
+              outline: 0;
+              color: #2aacdd;
+              transition: color .2s ease-in-out;
+            }
+            &:hover:before{
+              width: 100%;
+            }
+          }
+        }
+      }
+      [aria-expanded="true"] {
+        background: rgba(0,0,0,.8);
+      }
+      .navbar-toggle{
+        background: #fff;
+        border-color: #1dabdf;
+        .icon-bar{
+          background: #1dabdf;
+        }
+        &:hover,&:focus{
+          background: #1dabdf;
+          border-color: #1dabdf;
+          .icon-bar{
+            background: #fff;
+          }
+        }
+      }
+      .navbar-brand {
+        padding: 0px;
+        height: 60px;
+      }
+    }
+    @media (min-width:768px) {
+      .navbar-default
+      {
+        background-color: transparent;
+        padding: 25px 0;
+        -webkit-transition:padding .3s;
+        -moz-transition:padding .3s;
+        transition:padding .3s;
+        border:0;
+        .navbar-nav{
+          .active{
+            a{
+              border-radius: 3px
+
+            }
+          }
+        }
+        &.navbar-shrink {
+          padding: 0;
+          box-shadow: 0 4px 4px 0 rgba(0,0,0,.1);
+          background-color: #fff;
+          .navbar-toggle{
+            background-color: #222;
+          }
+          .navbar-nav{
+            a{
+              color: #222;
+            }
+          }
         }
       }
     }
-  }
+    .section-title {
+      margin-top: .7rem;
+      margin-bottom: .4rem;
+      color: #232323;
+      [class^="content-title-"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: .35rem;
+        line-height: .35rem;
+        font-family: "Open Sans", Sans-serif;
+        font-size: .32rem;
+        font-weight: normal;
+        margin: 0;
+        &.content-title-en {
+          font-size: .24rem;
+        }
+      }
+    }
+    .section-dec{
+      font-size: .24rem;
+    }
 
-  .swiper-container {
-    width: 100%;
-    height: 85vh;
-    background: #000;
-    .swiper-slide {
-      font-size: 18px;
-      color: #fff;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      text-align: center;
-      padding-top: 40vh;
-    }
-    .parallax-bg {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 130%;
-      height: 100%;
-      -webkit-background-size: cover;
-      background-size: cover;
-      background-position: center;
-    }
-    .swiper-slide .title {
-      font-size: 41px;
-      font-weight: 300;
-    }
-    .swiper-slide .subtitle {
-      font-size: 21px;
-    }
-    .swiper-slide .text {
-      font-size: 14px;
-      max-width: 400px;
-      line-height: 1.3;
-    }
-    .swiper-pagination {
-      bottom: 10px;
-    }
-    @keyframes xguide_down {
-      0%, 100% {
-        -o-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        transform: scale(0.8);
-        opacity: 0.5
+    .box-container {
+      width: 100%;
+      background: #e2e2e2;
+      ul {
+        margin-bottom: 0;
+        height: 1rem;
+        text-align: center;
+        li {
+          height: 1rem;
+          overflow: hidden;
+          a {
+            display: block;
+            height: 1rem;
+            line-height: .6rem;
+            text-decoration: none;
+            h2 {
+              margin-top: 0;
+              font-size: .12rem;
+              height: .23rem;
+              overflow: hidden;
+              color: #333;
+              font-weight: normal;
+            }
+            img {
+              width: .5rem;
+            }
+            .iconfont {
+              padding-top: .1rem;
+              display: block;
+              color: #3e3e3e;
+              font-size: .45rem;
+              &:hover {
+                font-size: .5rem;
+                transition: font-size .3s ease-in-out;
+              }
+            }
+          }
+          &:hover {
+            background: #eee;
+          }
+        }
       }
-      50% {
-        transform: scale(1.0);
-        -moz-transform: scale(1.0);
-        -o-transform: scale(1.0);
-        -webkit-transform: scale(1.0);
-        -ms-transform: scale(1.0);
-        opacity: 1
-      }
+    }
 
+    .swiper-container {
+      width: 100%;
+      height: 3.7rem;
+      background: #000;
+      .swiper-slide {
+        font-size: .18rem;
+        color: #fff;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        text-align: center;
+        padding-top: 1.4rem;
+      }
+      .parallax-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 130%;
+        height: 100%;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+      }
+      .swiper-slide .title {
+        font-size: .4rem;
+        font-weight: bold;
+      }
+      .swiper-slide .subtitle {
+        font-size: .2rem;
+      }
+      .swiper-slide .text {
+        margin: 0 auto;
+        font-size: .15rem;
+        max-width: 60%;
+        line-height: 1.3;
+      }
+      .swiper-pagination {
+        bottom: .1rem;
+      }
     }
-    @-webkit-keyframes xguide_down {
-      0%, 100% {
-        -o-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        transform: scale(0.8);
-        opacity: 0.5
-      }
-      50% {
-        -webkit-transform: scale(1.0);
-        -moz-transform: scale(1.0);
-        -o-transform: scale(1.0);
-        -ms-transform: scale(1.0);
-        transform: scale(1.0);
-        opacity: 1
-      }
 
-    }
-    @-moz-keyframes xguide_down {
-      0%, 100% {
-        -o-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        transform: scale(0.8);
-        opacity: 0.5
-      }
-      50% {
-        -moz-transform: scale(1.0);
-        -o-transform: scale(1.0);
-        -webkit-transform: scale(1.0);
-        -ms-transform: scale(1.0);
-        transform: scale(1.0);
-        opacity: 1
-      }
-
-    }
-    @-o-keyframes xguide_down {
-      0%, 100% {
-        -o-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        transform: scale(0.8);
-        opacity: 0.5
-      }
-      50% {
-        -o-transform: scale(1.0);
-        -moz-transform: scale(1.0);
-        -webkit-transform: scale(1.0);
-        -ms-transform: scale(1.0);
-        transform: scale(1.0);
-        opacity: 1
-      }
-
-    }
-    .arrow-down {
-      position: absolute;
-      left: 50%;
-      bottom: 40px;
-      margin-left: -25px;
-      width: 50px;
-      height: 50px;
-      img {
-        width: 30px;
-        animation: 'xguide_down' 2s ease-in-out 2s infinite;
-      }
-    }
   }
 
 

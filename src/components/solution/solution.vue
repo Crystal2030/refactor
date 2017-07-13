@@ -6,13 +6,13 @@
           <h3 class="content-title-en">SOLUTION</h3>
           <h2 class="content-title-ch">解决方案</h2>
         </div>
-        <p class="col-md-12 col-sm-12 col-xs-12 text-center">
+        <p class="col-md-12 col-sm-12 col-xs-12 text-center section-dec">
           在千变万化的架构中，找到您想要的了吗？
         </p>
       </div>
 
       <div class="row">
-        <div class="col-md-4" v-for="(service, index) in services">
+        <div class="col-md-4 col-sm-4 col-xs-4" v-for="(service, index) in services">
           <div class="ot-portfolio-item">
             <figure class="effect-bubba">
               <img src="static/images/info1.jpg" alt="img02" class="img-responsive">

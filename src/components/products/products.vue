@@ -7,17 +7,17 @@
             <h3 class="content-title-en">PRODUCTS</h3>
             <h2 class="content-title-ch">企业产品</h2>
           </div>
-          <p class="col-md-12 col-sm-12 col-xs-12 text-center">
+          <p class="col-md-12 col-sm-12 col-xs-12 text-center section-dec">
             总有一款产品满足您的需求，问题将迎刃而解
           </p>
         </div>
       </div>
         <div class="row products" v-cloak>
-          <div class="col-md-4 text-center product" v-for="(product, index) in products" v-show="index < defaultLen">
+          <div class="col-md-4  col-sm-4 col-xs-4 text-center product" v-for="(product, index) in products" v-show="index < defaultLen">
             <i class="iconfont" :class="`icon-${product.icon}`"></i>
             <div class="product-name">{{product.name}}</div>
           </div>
-          <div class="col-md-12">
+          <div class="col-md-12  col-sm-12 col-xs-12">
             <span class="show-more" @click.prevent="toggleShowAll">{{toggleText}}</span>
           </div>
         </div>
@@ -121,25 +121,28 @@
 <style lang="scss" rel="stylesheet/scss">
   .products-com {
     .product {
-      margin-bottom: 40px;
+      margin-bottom: .4rem;
       transition: display .35s;
       .iconfont {
         display: block;
-        font-size: 50px;
-        margin-bottom: 10px;
+        font-size: .5rem;
+        margin-bottom: .1rem;
       }
       &:hover {
         color: #2aacdd;
       }
+      .product-name{
+        font-size: .15rem;
+      }
     }
     .show-more {
       display: block;
-      width: 120px;
-      height: 36px;
-      line-height: 36px;
-      margin: 35px auto 40px;
+      width: 1.2rem;
+      height: .36rem;
+      line-height: .36rem;
+      margin: .35rem auto .4rem;
       text-align: center;
-      font-size: 14px;
+      font-size: .14rem;
       color: #373d41;
       border: 1px solid #373d41;
       cursor: pointer;

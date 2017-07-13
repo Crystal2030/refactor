@@ -11,7 +11,7 @@
         </p>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4 col-xs-4">
           <div class="ot-portfolio-item">
             <figure class="effect-bubba">
               <img src="static/images/info1.jpg" alt="img02" class="img-responsive">
@@ -21,7 +21,7 @@
             </figure>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4 col-xs-4">
           <div class="ot-portfolio-item">
             <figure class="effect-bubba">
               <img src="static/images/info2.jpg" alt="img02" class="img-responsive">
@@ -31,7 +31,7 @@
             </figure>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4 col-xs-4">
           <div class="ot-portfolio-item">
             <figure class="effect-bubba">
               <img src="static/images/info3.jpg" alt="img02" class="img-responsive">

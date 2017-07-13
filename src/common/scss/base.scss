@@ -281,10 +281,10 @@ figure {
     height: 100%;
     &::before,&::after{
       position: absolute;
-      top: 30px;
-      right: 30px;
-      bottom: 30px;
-      left: 30px;
+      top: .2666rem;
+      right: .2666rem;
+      bottom: .2666rem;
+      left: .2666rem;
       content: '';
       opacity: 0;
       -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -308,7 +308,7 @@ figure {
     margin-bottom: 30px;
     h2 {
       color: #fff;
-      font-size: 15px;
+      font-size: .15rem;
       font-weight: 700;
       text-transform: uppercase;
       padding-top: 40%;
@@ -345,12 +345,12 @@ figure {
       }
       h2, .train-info>li{
         opacity: 1;
-        -webkit-transform: translate3d(0,-30px,0);
-        transform: translate3d(0,-30px,0);
-        font-size: 18px;
+        -webkit-transform: translate3d(0,-.3rem,0);
+        transform: translate3d(0,-.3rem,0);
+        font-size: .18rem;
       }
       .train-info>li{
-        font-size: 12px;
+        font-size: .12rem;
       }
     }
   }
@@ -361,42 +361,52 @@ figure {
   text-align: center;
   /*margin-bottom: 45px;*/
   .vira-card-header{
-    margin-bottom: 35px;
+    margin-bottom: .35rem;
     .card-icon{
       border: 1px solid #1dabdf;
       border-radius: 100%;
       display: inline-block;
-      height: 120px;
-      width: 120px;
-      line-height: 120px;
+      height: 1.2rem;
+      width: 1.2rem;
+      line-height: 1.2rem;
       position: relative;
       &:after{
         content: '';
-        height: 100px;
-        width: 100px;
+        height: 1rem;
+        width: 1rem;
         background-color: #1dabdf;
         border-radius: 100%;
         position: absolute;
-        top: 9px;
-        left: 9px;
+        top: .09rem;
+        left: .09rem;
         transition: all 0.3s ease-in-out;
         &:hover{
-          width: 120px;
-          height: 12px;
+          width: 1.2rem;
+          height: 1.2rem;
         }
       }
       span{
         color: #fff;
-        font-size: 45px;
+        font-size: .45rem;
         position: relative;
         z-index: 1;
       }
       .iconfont{
-        font-size: 30px;
-        top: 50%;
-        margin-top: -25px;
-        z-index: 2;
         border: none;
+        font-size: .4rem;
+        top: 50%;
+        margin-top: -.25rem;
+        z-index: 2;
+        display: block;
+        width: .6rem;
+        height: .6rem;
+        line-height: .54rem;
+        border-radius: 50%;
+        background: #1dabdf;
+        color: #fff;
+        position: absolute;
+        left: 50%;
+        margin-left: -.3rem;
       }
     }
   }
@@ -404,8 +414,8 @@ figure {
     .vira-card-header{
       .card-icon{
         &:after{
-          height: 120px;
-          width: 120px;
+          height: 1.2rem;
+          width: 1.2rem;;
           top: -1px;
           left: -1px;
         }
@@ -415,23 +425,23 @@ figure {
   .vira-card-content{
     h3{
       position: relative;
-      margin-bottom: 60px;
-      font-size: 15px;
+      margin-bottom: .6rem;
+      font-size: .15rem;
       &:after{
         content: '';
-        height: 1px;
-        width: 44px;
+        height: .01rem;
+        width: .44rem;
         background-color: #1dabdf;
         position: absolute;
-        top: 42px;
-        left: calc(50% - 22px);
+        top: .42rem;
+        left: calc(50% - .22rem);
       }
     }
     p{
-      font-size: 15px;
+      font-size: .15rem;
     }
     .social-icons{
-      margin-top: 30px;
+      margin-top: .3rem;
     }
   }
 }

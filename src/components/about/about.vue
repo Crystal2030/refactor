@@ -18,33 +18,33 @@
             审核)、MAMP(DB管理平台)、Daas(数据即服务)、DB-Proxy
           </p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6 col-xs-6">
           <h2>联系我们</h2>
           <div class="row">
             <div class="col-md-6"><i class="iconfont icon-dianhua1"></i> 185-0103-6362</div>
             <div class="col-md-6"><i class="iconfont icon-youxiang1"></i> marketing@cloud-ark.com</div>
           </div>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6">
               <div class="form-group">
                 <input class="form-control" type="text" placeholder="您的姓名:">
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6">
               <div class="form-group">
                 <input class="form-control" type="email" placeholder="您的邮箱:">
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="form-group">
                 <textarea class="form-control" name="message" ></textarea>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
               <button type="submit" class="btn send">发送</button>
             </div>
           </div>
@@ -61,15 +61,21 @@
 <style lang="scss" rel="stylesheet/scss">
 .about{
   background: #fff;
-  padding-bottom: 60px;
+  padding-bottom: .6rem;
+  h2{
+    font-size: .28rem;
+    font-weight: 600;
+  }
   .send{
     background: #1dabdf;
-    width:135px;
-    height: 35px;
+    width:1.35rem;
+    height: .35rem;
+    line-height: .17rem;
     color: #fff;
+    font-size: .14rem;
   }
   .iconfont{
-    font-size: 16px;
+    font-size: .24rem;
     color: #1dabdf;
   }
 }
