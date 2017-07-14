@@ -14,8 +14,10 @@
       </div>
         <div class="row products" v-cloak>
           <div class="col-md-4  col-sm-4 col-xs-4 text-center product" v-for="(product, index) in products" v-show="index < defaultLen">
-            <i class="iconfont" :class="`icon-${product.icon}`"></i>
-            <div class="product-name">{{product.name}}</div>
+            <router-link :to="{path: 'productDetail', query: {title: 'aaa'}}">
+              <i class="iconfont" :class="`icon-${product.icon}`"></i>
+              <div class="product-name">{{product.name}}</div>
+            </router-link>
           </div>
           <div class="col-md-12  col-sm-12 col-xs-12">
             <span class="show-more" @click.prevent="toggleShowAll">{{toggleText}}</span>

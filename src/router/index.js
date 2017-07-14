@@ -6,6 +6,7 @@ import home from '@/components/home/home.vue';
 // import service from '@/components/service/service.vue';
 // import training from '@/components/training/training.vue';
 // import about from '@/components/about/about.vue';
+import productDetail from '@/components/productDetail/productDetail.vue';
 
 import '@/common/scss/index.scss';
 
@@ -23,6 +24,10 @@ export default new Router({
     {
       path: '/home',
       component: home
+    },
+    {
+        path: '/productDetail',
+        component: productDetail
     }
   ]
 });
