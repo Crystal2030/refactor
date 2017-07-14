@@ -167,7 +167,7 @@
   import Vue from 'vue';
   import VueScrollTo from 'vue-scrollto';
   import $ from 'jquery';
-  import Swiper from '../../../lib/swiper.min.js';
+  import Swiper from 'swiper';
   import vfooter from '../footer/footer.vue';
   import products from '../products/products.vue';
   import solution from '../solution/solution.vue';
