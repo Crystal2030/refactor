@@ -14,8 +14,8 @@
       </div>
         <div class="row products" v-cloak>
           <div class="col-md-4  col-sm-4 col-xs-4 text-center product" v-for="(product, index) in products" v-show="index < defaultLen">
-            <router-link :to="`/productDetail/${product.name}`" >
-              <i class="iconfont" :class="`icon-${product.icon}`" :product="products"></i>
+            <router-link :to="{name:'detail',params:{name: product.name}}" >
+              <i class="iconfont" :class="`icon-${product.icon}`"></i>
               <div class="product-name">{{product.name}}</div>
             </router-link>
           </div>
@@ -160,7 +160,6 @@
 
       };
     },
-
     methods: {
       toggleShowAll() {
         this.showAll = !this.showAll;
@@ -179,18 +178,26 @@
 <style lang="scss" rel="stylesheet/scss">
   .products-com {
     .product {
-      margin-bottom: .4rem;
-      transition: display .35s;
-      .iconfont {
-        display: block;
-        font-size: 50px;
-        margin-bottom: .1rem;
-      }
-      &:hover {
-        color: #2aacdd;
-      }
-      .product-name{
-        font-size: 15px;
+      a{
+        margin-bottom: .4rem;
+        transition: display .35s;
+        color: #232323;
+        .iconfont {
+          display: block;
+          font-size: 50px;
+          margin-bottom: .1rem;
+          color: #232323;
+        }
+        &:hover {
+          color: #2aacdd;
+          text-decoration: none;
+          .iconfont{
+            color: #2aacdd;
+          }
+        }
+        .product-name{
+          font-size: 15px;
+        }
       }
     }
     .show-more {
