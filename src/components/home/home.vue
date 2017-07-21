@@ -1,55 +1,5 @@
 <template>
   <div class="home">
-    <nav class="navbar navbar-default navbar-fixed-top" id="page-top">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-          <button type="button" class="navbar-toggle" data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand page-scroll" href="/home"><img
-            src="static/images/logo-white.png" alt="ark logo"></a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="hidden">
-              <a href="/home"></a>
-            </li>
-            <li>
-              <router-link v-scroll-to="{el: '#home'}" to="home">首页</router-link>
-            </li>
-            <li>
-              <router-link v-scroll-to="{el: '#products'}" to="home">产品</router-link>
-            </li>
-            <li>
-              <router-link v-scroll-to="{el: '#solution'}" to="home">解决方案</router-link>
-            </li>
-            <li>
-              <router-link v-scroll-to="{el: '#largeData'}" to="home">大数据服务</router-link>
-            </li>
-            <li>
-              <router-link v-scroll-to="{el: '#machine'}" to="home">数据库一体机</router-link>
-            </li>
-            <li>
-              <router-link v-scroll-to="{el: '#cloudService'}" to="home">云服务</router-link>
-            </li>
-            <li>
-              <router-link v-scroll-to="{el: '#school'}" to="home">极数学院</router-link>
-            </li>
-            <li>
-              <router-link v-scroll-to="{el: '#about'}" to="home">关于我们</router-link>
-            </li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
     <!-- Swiper -->
     <div id="home" class="swiper-container">
       <canvas class="constellation" width="25.6rem" height="8.7rem"></canvas>
@@ -158,17 +108,14 @@
     <training id="school"></training>
     <!--about-->
     <about id="about"></about>
-    <vfooter></vfooter>
   </div>
 </template>
 
 <script>
   /* eslint-disable no-new */
-  import Vue from 'vue';
-  import VueScrollTo from 'vue-scrollto';
+
   import $ from 'jquery';
   import Swiper from 'swiper';
-  import vfooter from '../footer/footer.vue';
   import products from '../products/products.vue';
   import solution from '../solution/solution.vue';
   import largeData from '../largeData/largeData.vue';
@@ -177,7 +124,7 @@
   import training from '../training/training.vue';
   import about from '../about/about.vue';
   const DEFAULTLEN = 8;
-  Vue.use(VueScrollTo);
+
   export default {
     props: {},
     data() {
@@ -422,8 +369,7 @@
       machine,
       cloudService,
       training,
-      about,
-      vfooter
+      about
     }
   };
 </script>
