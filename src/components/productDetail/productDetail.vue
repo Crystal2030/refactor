@@ -182,28 +182,33 @@ export default {
 
 }
 .product-detail{
+  padding-bottom: 120px;
   .products{
-    padding-top: 200px;
-    padding-bottom: 120px;
+    .col-md-4{
+      height: 185px;
+    }
+    .col-md-4:nth-child(3n+1){
+      clear: both;
+    }
   }
   .header-bg{
     position: fixed;
     top: 0;
     width: 100%;
-    height: .5rem;
+    height: .55rem;
     box-shadow: 0 4px 4px 0 rgba(0,0,0,.1);
     background-color: #2c3037;
   }
   .mask{
     position: relative;
     padding:0;
-    padding-bottom: 33.333%;
+    /*padding-bottom: 33.333%;*/
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
     .iconfont{
       font-size: 50px;
-      color: #fff;
+      color: #2c3037;
     }
     .background{
       width: 100%;
@@ -215,11 +220,11 @@ export default {
       right: 0;
       top: 0;
       bottom: 0;
-      background: #384d54;
-      opacity: 0.6;
-      filter: alpha(opacity=60);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      transform: rotate(45deg);
+      background: none;
+      /*opacity: 0.6;*/
+      /*filter: alpha(opacity=60);*/
+      /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+      /*transform: rotate(45deg);*/
     }
     &:hover{
       .background{
@@ -228,20 +233,25 @@ export default {
         -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(0));
       }
       .bg{
-        background: #00c2de;
-        opacity: 0.9;
-        filter: alpha(opacity=90);
-        -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(90));
+        /*background: #00c2de;*/
+        /*opacity: 0.9;*/
+        /*filter: alpha(opacity=90);*/
+        /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(90));*/
       }
       .content{
-        top: 13%;
-        [class^="icon-"]{
-          color: #fff;
+        /*top: 13%;*/
+        color: #1dabdf;
+        .iconfont{
+          color: #1dabdf;
+        }
+        .item-desc,.item-subtitle,.item-title{
+          color: #1dabdf;
+          /*opacity: 1;*/
+          /*filter: alpha(opacity=100);*/
+          /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(100));*/
         }
         .item-desc{
           opacity: 1;
-          filter: alpha(opacity=100);
-          -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(100));
         }
       }
 
@@ -253,26 +263,26 @@ export default {
       right: 0;
       top: 100px;
       bottom: 0;
-      -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      -moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      -o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+      /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+      /*-o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+      /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
       [class^="icon-"]{
         font-size: 60px;
-        color: #00c2de;
+        color: #2c3037;
       }
       .item-title,.item-subtitle{
-        color: #fff;
+        color: #2c3037;
         font-size: 22px;
         line-height: 24px;
         margin: 0;
         padding: 0;
         margin-top: 24px;
         font-weight: bold;
-        -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        -o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+        /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+        /*-o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+        /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
       }
       .item-subtitle{
         font-size: 15px;
@@ -282,18 +292,18 @@ export default {
       .item-desc{
         opacity: 0;
         font-size: 12px;
-        color: #fff;
+        color: #2c3037;
         text-align: center;
         margin-top: 10px;
         padding: 0px 20px;
         line-height: 20px;
         height: 72px;
-        filter: alpha(opacity=0);
-        -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(0));
-        -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        -o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        /*filter: alpha(opacity=0);*/
+        /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(0));*/
+        /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+        /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+        /*-o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+        /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
         a{
           color:#fff;
         }
