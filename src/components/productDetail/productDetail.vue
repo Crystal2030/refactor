@@ -1,5 +1,5 @@
 <template>
-  <div class="product-detail">
+  <div class="product-detail" ref="productDetail">
     <div class="header-bg"></div>
     <div class="container">
       <div class="products row">
@@ -161,7 +161,20 @@ export default {
       product: {}
     };
   },
+  watch: {
+    '$route'(to, from) {
+      let products = this.products;
+      let name = to.params.name;
+      for (var i = 0, len = products.length; i < len; i++) {
+        if (products[i].name === name) {
+          this.product = products[i];
+        }
+      }
+    }
+  },
   mounted() {
+    console.log(this.$refs.productDetail.offsetTop);
+    this.$refs.productDetail.style.top = 0;
     let products = this.products;
     let name = this.$route.params.name;
     for (var i = 0, len = products.length; i < len; i++) {
@@ -169,7 +182,6 @@ export default {
         this.product = products[i];
       }
     }
-    console.log(this.product);
   },
   components: {
     box

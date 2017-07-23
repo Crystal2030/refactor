@@ -48,7 +48,7 @@
     data() {
       return {
         menus: [
-          {id: '#home', name: '首页'},
+          {id: '#home', name: '首页', content: []},
           {
             id: '#products',
             name: '产品',
@@ -182,12 +182,12 @@
               ]
             }
           ]},
-          {id: '#solution', name: '解决方案'},
-          {id: '#largeData', name: '大数据服务'},
-          {id: '#machine', name: '数据库一体机'},
-          {id: '#cloudService', name: '云服务'},
-          {id: '#school', name: '极数学院'},
-          {id: '#about', name: '关于我们'}
+          {id: '#solution', name: '解决方案', content: []},
+          {id: '#largeData', name: '大数据服务', content: []},
+          {id: '#machine', name: '数据库一体机', content: []},
+          {id: '#cloudService', name: '云服务', content: []},
+          {id: '#school', name: '极数学院', content: []},
+          {id: '#about', name: '关于我们', content: []}
         ],
         dropDownContent: []
 
@@ -195,7 +195,7 @@
     },
     methods: {
       getCurrentContent(index) {
-        console.log(this.$refs.menuList[index].offsetLeft);
+//        console.log(this.$refs.menuList[index].offsetLeft);
         this.$refs.dropdown.style.left = (this.$refs.menuList[index].offsetLeft - 70) + 'px';
          this.dropDownContent = this.menus[index].content;
       },
