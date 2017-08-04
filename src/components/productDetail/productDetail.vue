@@ -1,10 +1,8 @@
 <template>
   <div class="product-detail" ref="productDetail">
-    <div class="header-bg"></div>
     <div class="container">
       <div class="products row">
         <div class="col-md-4 col-sm-4 col-xs-4 mask slideleft" v-for="detail in product.details">
-          <!--<img src="static/images/box1.png" alt="" class="background"/>-->
           <div class="bg"></div>
           <div class="content">
             <div class="item-img-panel">
@@ -173,6 +171,12 @@ export default {
     }
   },
   mounted() {
+    let navbar = document.querySelector('#page-top');
+    let navbrand = document.querySelector('.navbar-brand img');
+    this.$nextTick(() => {
+      navbar.className += ' navbar-shrink';
+      navbrand.setAttribute('src', 'static/images/logo-blue.png');
+    });
     console.log(this.$refs.productDetail.offsetTop);
     this.$refs.productDetail.style.top = 0;
     let products = this.products;
@@ -194,22 +198,27 @@ export default {
 
 }
 .product-detail{
-  padding-bottom: 120px;
+  flex: 1 0 auto;
   .products{
+    padding-bottom: 100px;
     .col-md-4{
       height: 185px;
     }
     .col-md-4:nth-child(3n+1){
       clear: both;
     }
-  }
-  .header-bg{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: .55rem;
-    box-shadow: 0 4px 4px 0 rgba(0,0,0,.1);
-    background-color: #2c3037;
+    .col-md-4:nth-child(3n-1){
+      animation-name: zoomin;
+      animation-duration: 1s;
+      -webkit-animation-name: zoomin;
+      -webkit-animation-duration: 1s;
+    }
+    .col-md-4:nth-child(3n){
+      animation-name: slideright;
+      animation-duration: 1s;
+      -webkit-animation-name: slideright;
+      -webkit-animation-duration: 1s;
+    }
   }
   .mask{
     position: relative;
@@ -258,6 +267,7 @@ export default {
         }
         .item-desc,.item-subtitle,.item-title{
           color: #1dabdf;
+          font-weight: normal;
           /*opacity: 1;*/
           /*filter: alpha(opacity=100);*/
           /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(100));*/
@@ -290,7 +300,7 @@ export default {
         margin: 0;
         padding: 0;
         margin-top: 24px;
-        font-weight: bold;
+        font-weight: normal;
         /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
         /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
         /*-o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/

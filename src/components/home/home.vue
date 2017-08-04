@@ -177,8 +177,10 @@
             $('.navbar').addClass('navbar-shrink');
             $('.navbar-brand img').attr('src', 'static/images/logo-blue.png');
           } else {
-            $('.navbar').removeClass('navbar-shrink');
-            $('.navbar-brand img').attr('src', 'static/images/logo-white.png');
+            if (!$('.product-detail').length) {
+              $('.navbar').removeClass('navbar-shrink');
+              $('.navbar-brand img').attr('src', 'static/images/logo-white.png');
+            }
           }
           didScroll = false;
         }
@@ -531,6 +533,7 @@
     .box-container {
       width: 100%;
       background: #e2e2e2;
+      overflow: hidden;
       ul {
         margin-bottom: 0;
         height: 1rem;
