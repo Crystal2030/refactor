@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import '@/common/scss/index.scss';
-import box from '@/components/box/box.vue';
-export default {
-  data() {
+  import '@/common/scss/index.scss';
+  import box from '@/components/box/box.vue';
+  export default {
+    data() {
     return {
       products: [
         {
@@ -176,49 +176,55 @@ export default {
     this.$nextTick(() => {
       navbar.className += ' navbar-shrink';
       navbrand.setAttribute('src', 'static/images/logo-blue.png');
-    });
-    console.log(this.$refs.productDetail.offsetTop);
-    this.$refs.productDetail.style.top = 0;
-    let products = this.products;
-    let name = this.$route.params.name;
-    for (var i = 0, len = products.length; i < len; i++) {
-      if (products[i].name === name) {
-        this.product = products[i];
-      }
+  });
+  console.log(this.$refs.productDetail.offsetTop);
+  this.$refs.productDetail.style.top = 0;
+  let products = this.products;
+  let name = this.$route.params.name;
+  for (var i = 0, len = products.length; i < len; i++) {
+    if (products[i].name === name) {
+      this.product = products[i];
     }
+  }
   },
   components: {
     box
   }
-};
+  };
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>
-#page-top{
+  #page-top{
 
-}
-.product-detail{
-  flex: 1 0 auto;
+  }
+  .product-detail{
+    position: relative;
+    top: 115px!important;
+    flex: 1 0 auto;
   .products{
     padding-bottom: 100px;
-    .col-md-4{
-      height: 185px;
-    }
-    .col-md-4:nth-child(3n+1){
-      clear: both;
-    }
-    .col-md-4:nth-child(3n-1){
-      animation-name: zoomin;
-      animation-duration: 1s;
-      -webkit-animation-name: zoomin;
-      -webkit-animation-duration: 1s;
-    }
-    .col-md-4:nth-child(3n){
-      animation-name: slideright;
-      animation-duration: 1s;
-      -webkit-animation-name: slideright;
-      -webkit-animation-duration: 1s;
-    }
+  .col-md-4{
+    height: 185px;
+    background: rgba(234, 233, 233,.2);
+    margin-top:0;
+    padding: 40px 0 50px 0;
+    border-right: 20px solid #fff;
+  }
+  .col-md-4:nth-child(3n+1){
+    clear: both;
+  }
+  .col-md-4:nth-child(3n-1){
+    animation-name: zoomin;
+    animation-duration: 1s;
+    -webkit-animation-name: zoomin;
+    -webkit-animation-duration: 1s;
+  }
+  .col-md-4:nth-child(3n){
+    animation-name: slideright;
+    animation-duration: 1s;
+    -webkit-animation-name: slideright;
+    -webkit-animation-duration: 1s;
+  }
   }
   .mask{
     position: relative;
@@ -227,110 +233,110 @@ export default {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
-    .iconfont{
-      font-size: 50px;
-      color: #2c3037;
-    }
-    .background{
-      width: 100%;
-      height: 100%;
-    }
-    .bg{
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background: none;
-      /*opacity: 0.6;*/
-      /*filter: alpha(opacity=60);*/
-      /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-      /*transform: rotate(45deg);*/
-    }
-    &:hover{
-      .background{
-        opacity: 0;
-        filter: alpha(opacity=0);
-        -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(0));
-      }
-      .bg{
-        /*background: #00c2de;*/
-        /*opacity: 0.9;*/
-        /*filter: alpha(opacity=90);*/
-        /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(90));*/
-      }
-      .content{
-        /*top: 13%;*/
-        color: #1dabdf;
-        .iconfont{
-          color: #1dabdf;
-        }
-        .item-desc,.item-subtitle,.item-title{
-          color: #1dabdf;
-          font-weight: normal;
-          /*opacity: 1;*/
-          /*filter: alpha(opacity=100);*/
-          /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(100));*/
-        }
-        .item-desc{
-          opacity: 1;
-        }
-      }
-
-
-    }
-    .content{
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 100px;
-      bottom: 0;
-      /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-      /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-      /*-o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-      /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-      [class^="icon-"]{
-        font-size: 60px;
-        color: #2c3037;
-      }
-      .item-title,.item-subtitle{
-        color: #2c3037;
-        font-size: 22px;
-        line-height: 24px;
-        margin: 0;
-        padding: 0;
-        margin-top: 24px;
-        font-weight: normal;
-        /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-        /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-        /*-o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-        /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-      }
-      .item-subtitle{
-        font-size: 15px;
-        font-weight: normal;
-        margin-top: 8px;
-      }
-      .item-desc{
-        opacity: 0;
-        font-size: 12px;
-        color: #2c3037;
-        text-align: center;
-        margin-top: 10px;
-        padding: 0px 20px;
-        line-height: 20px;
-        height: 72px;
-        /*filter: alpha(opacity=0);*/
-        /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(0));*/
-        /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-        /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-        /*-o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-        /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
-        a{
-          color:#fff;
-        }
-      }
-    }
+  .iconfont{
+    font-size: 50px;
+    color: #2c3037;
   }
-}
+  .background{
+    width: 100%;
+    height: 100%;
+  }
+  .bg{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: none;
+    /*opacity: 0.6;*/
+    /*filter: alpha(opacity=60);*/
+    /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+    /*transform: rotate(45deg);*/
+  }
+  &:hover{
+  .background{
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(0));
+  }
+  .bg{
+    /*background: #00c2de;*/
+    /*opacity: 0.9;*/
+    /*filter: alpha(opacity=90);*/
+    /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(90));*/
+  }
+  .content{
+    top: 0;
+    color: #1dabdf;
+  .iconfont{
+    color: #1dabdf;
+  }
+  .item-desc,.item-subtitle,.item-title{
+    color: #1dabdf;
+    font-weight: normal;
+    /*opacity: 1;*/
+    /*filter: alpha(opacity=100);*/
+    /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(100));*/
+  }
+  .item-desc{
+    opacity: 1;
+  }
+  }
+
+
+  }
+  .content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    bottom: 0;
+  /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+  /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+  /*-o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+  /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+  [class^="icon-"]{
+    font-size: 60px;
+    color: #2c3037;
+  }
+  .item-title,.item-subtitle{
+    color: #2c3037;
+    font-size: 22px;
+    line-height: 5px;
+    margin: 0;
+    padding: 0;
+    margin-top: 24px;
+    font-weight: normal;
+    /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+    /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+    /*-o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+    /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+  }
+  .item-subtitle{
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 8px;
+  }
+  .item-desc{
+    opacity: 0;
+    font-size: 12px;
+    color: #2c3037;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px 20px;
+    line-height: 20px;
+    height: 72px;
+  /*filter: alpha(opacity=0);*/
+  /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(0));*/
+  /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+  /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+  /*-o-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+  /*transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
+  a{
+    color:#fff;
+  }
+  }
+  }
+  }
+  }
 </style>
