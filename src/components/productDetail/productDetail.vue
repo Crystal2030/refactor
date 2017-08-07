@@ -2,7 +2,7 @@
   <div class="product-detail" ref="productDetail">
     <div class="container">
       <div class="products row">
-        <div class="col-md-4 col-sm-4 col-xs-4 mask slideleft" v-for="detail in product.details">
+        <div class="col-md-4 col-sm-4 col-xs-4 mask" v-for="detail in product.details">
           <div class="bg"></div>
           <div class="content">
             <div class="item-img-panel">
@@ -202,18 +202,17 @@
     top: 115px!important;
     flex: 1 0 auto;
   .products{
-    padding-bottom: 100px;
+    padding-bottom: 130px;
   .col-md-4{
-    height: 185px;
-    background: rgba(234, 233, 233,.2);
-    margin-top:0;
-    padding: 40px 0 50px 0;
+    height: 220px;
+    background: rgba(234, 233, 233, 0.2);
+    margin-top: 0;
     border-right: 20px solid #fff;
   }
   .col-md-4:nth-child(3n+1){
     clear: both;
   }
-  .col-md-4:nth-child(3n-1){
+  /*.col-md-4:nth-child(3n-1){
     animation-name: zoomin;
     animation-duration: 1s;
     -webkit-animation-name: zoomin;
@@ -224,7 +223,7 @@
     animation-duration: 1s;
     -webkit-animation-name: slideright;
     -webkit-animation-duration: 1s;
-  }
+  }*/
   }
   .mask{
     position: relative;
@@ -266,7 +265,7 @@
     /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=(90));*/
   }
   .content{
-    top: 0;
+    /*top: 0;*/
     color: #1dabdf;
   .iconfont{
     color: #1dabdf;
@@ -289,7 +288,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 25px;
+    top: 20px;
     bottom: 0;
   /*-webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
   /*-moz-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);*/
@@ -318,7 +317,7 @@
     margin-top: 8px;
   }
   .item-desc{
-    opacity: 0;
+    opacity: 1;
     font-size: 12px;
     color: #2c3037;
     text-align: center;
