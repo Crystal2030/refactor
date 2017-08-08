@@ -15,7 +15,7 @@
         <div class="col-md-4 col-sm-4 col-xs-4" v-for="(service, index) in services">
           <div class="ot-portfolio-item">
             <figure class="effect-bubba">
-              <img src="static/images/info1.jpg" alt="img02" class="img-responsive">
+              <img :src="`static/images/info${index+1}.jpg`" alt="img02" class="img-responsive">
               <figcaption>
                 <h2>{{service}}</h2>
               </figcaption>
