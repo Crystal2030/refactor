@@ -52,7 +52,7 @@
 .service{
   background: #fcfcfc;
   padding-bottom: 40px;
-  .iconfont{
+  /*.iconfont{
     display: block;
     width: 60px;
     height: 60px;
@@ -67,7 +67,7 @@
     margin-left: -30px;
     top: -50%;
     font-size: 35px;
-  }
+  }*/
   .services-wrapper{
     margin-bottom: 30px;
     /*padding-left: 55px;*/

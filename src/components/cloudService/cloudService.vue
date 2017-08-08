@@ -10,7 +10,7 @@
           轻轻一点，乐在其中
         </p>
       </div>
-      <div class="row">
+      <!--<div class="row">
         <div class="col-md-4 col-sm-4 col-xs-4" v-for="(service, index) in services">
           <div class="vira-card">
             <div class="vira-card-header">
@@ -22,6 +22,14 @@
               <h3>{{service.name}}</h3>
             </div>
           </div>
+        </div>
+      </div>-->
+      <div class="row services" v-cloak>
+        <div class="col-md-4  col-sm-4 col-xs-4 text-center service" v-for="(service, index) in services">
+          <a>
+            <i class="iconfont" :class="`icon-${service.icon}`"></i>
+            <div class="service-name">{{service.name}}</div>
+          </a>
         </div>
       </div>
     </div>
@@ -45,8 +53,33 @@
 <style lang="scss" rel="stylesheet/scss">
 .cloud{
   background: #fff;
-  .iconfont{
-    font-size: .5rem!important;
+  .services {
+    .service {
+      margin-bottom: 15px;
+      background: rgba(234, 233, 233,.2);
+      padding: 40px 0 50px 0;
+      border-right: 15px solid #fff;
+      a{
+        transition: display .35s;
+        color: #232323;
+        .iconfont {
+          display: block;
+          font-size: 58px;
+          margin-bottom: .1rem;
+          color: #232323;
+        }
+        &:hover {
+          color: #2aacdd;
+          text-decoration: none;
+          .iconfont{
+            color: #2aacdd;
+          }
+        }
+        .service-name{
+          font-size: 15px;
+        }
+      }
+    }
   }
 }
 </style>
