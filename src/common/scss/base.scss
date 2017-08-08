@@ -367,7 +367,7 @@ figure {
         content: '';
         height: 1rem;
         width: 1rem;
-        background-color: #1dabdf;
+        background: rgba(29, 171, 223, 0.8);
         border-radius: 100%;
         position: absolute;
         top: .09rem;
@@ -395,7 +395,6 @@ figure {
         height: .6rem;
         line-height: .54rem;
         border-radius: 50%;
-        background: #1dabdf;
         color: #fff;
         position: absolute;
         left: 50%;
